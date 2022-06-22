@@ -1,1 +1,10 @@
-<h5>Those are the people who signed:</h5>
+<section id="signers-section">
+    <h5>Those are the people who signed:</h5>
+    <ol id="signers">
+        {{#signers}}
+            <li class="signer">
+                <p>{{first}} {{last}}</p>
+            </li>
+        {{/signers}}
+    </ol>
+</section>

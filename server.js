@@ -1,144 +1,101 @@
-//SERVER
 const express = require("express");
 const app = express();
 const db = require("./db");
 const PORT = 8080;
-const bcrypt = require("./bcrypt");
-console.log(bcrypt);
+// const bcrypt = require("./bcrypt");
+// console.log(bcrypt);
 
 //setup HB-EXPRESS
 const { engine } = require("express-handlebars");
 app.engine("handlebars", engine());
 app.set("view engine", "handlebars");
 
-// importing css
+// linking public directory for css and script.js
 app.use(express.static("./public"));
 
 //for parsing the form POST request
 app.use(express.urlencoded({ extended: false }));
 
-//--------------COOKIES AND SHOW SIGNATURE---------------------------
+//--------COOKIES AND SHOW SIGNATURE----------
 const cookieSession = require("cookie-session");
 console.log(cookieSession);
 
-// app.use(
-//     cookieSession({
-//         secret: `I'm always angry`,
-//         maxAge: 1000 * 60 * 60 * 24 * 14,
-//         signed: true,
-//     })
-// );
-
-//-----------rendering my HB templates-----------
+app.use(
+    cookieSession({
+        secret: `I'm always angry`,
+        maxAge: 1000 * 60 * 60 * 24 * 14,
+    })
+);
+//-----------setup my routes-----------
 
 app.get("/petition", (req, res) => {
-    res.render("petition");
+    if (req.session.signId) {
+        res.redirect("/thanks");
+    } else {
+        res.render("petition");
+    }
 });
-
-// app.get("/petition", (res, req) => {
-//     if (req.session.signed === true) {
-//         res.redirect("/thanks");
-//     } else {
-//         res.render("/petition");
-//     }
-// });
-
-app.get("/petition/thanks", (req, res) => {
-    res.render("thanks");
-});
-
-// app.get("/petition/thanks", (req, res) => {
-//     if (req.session.signedPetition) {
-//         //get signature, then amount of rows
-
-//         db.displaySignature(req.session.signatureId).then((result) => {
-//             const sendResults = result.rows[0];
-//             db.countSigners().then((result) => {
-//                 const count = result.rows[0].count;
-
-//                 res.render("thanks", {
-//                     title: "thanks",
-//                     sendResults,
-//                     count,
-//                 });
-//             });
-//         });
-//     } else {
-//         res.redirect("/petition");
-//     }
-// });
-
-app.get("/signers", (req, res) => {
-    res.render("signers");
-});
-
-//--------------serving the GET and POST req-----------
-app.get("/signers", (req, res) => {
-    console.log("running GET / signers");
-    db.getSignatures(req.body.first, req.body.last, req.body.signature)
-        .then((result) => {
-            // our actual data is to be found under the rows property
-            console.log("result.rows from getActors:", result.rows);
-            const results = result.rows;
-            res.render("signers", {
-                title: "signers",
-                results,
-            });
-        })
-        .catch((err) => console.log("err in db.getSignatures:", err));
-});
-
-// app.get("/petition/signers", (req, res) => {
-//     if (req.session.signed) {
-//         db.getSignatures()
-//             .then((result) => {
-//                 const results = result.rows;
-
-//                 res.render("signers", {
-//                     title: "signers",
-//                     results,
-//                 });
-//             })
-//             .catch((err) => {
-//                 console.log("ERROR ", err);
-//             });
-//     } else {
-//         res.redirect("/petition");
-//     }
-// });
 
 app.post("/petition", (req, res) => {
-    console.log("running POST / petition");
-    console.log(req.body);
-
-    db.addSignatures(req.body.first, req.body.last, req.body.signature)
-        .then(() => {
-            db.getSignatures();
-            res.redirect("/petition/thanks");
+    console.log("req.body: ", req.body);
+    db.addSigner(req.body.first, req.body.last, req.body.signature)
+        .then(function (results) {
+            req.session.signId = results.rows[0].id;
+            res.redirect("/thanks");
         })
-        .catch((err) => {
+        .catch(function (err) {
             console.log(err);
+            res.render("petition", {
+                error: true,
+            });
         });
 });
 
-// app.post("/petition", (req, res) => {
-//     db.addSignature(req.body.fName, req.body.lName, req.body.signature)
-//         .then((result) => {
-//             db.getSignatures();
+app.get("/thanks", (req, res) => {
+    if (req.session.signId) {
+        console.log("in read cookie route");
+        console.log("req.session.signId ", req.session.signId);
+        db.getSignatureData(req.session.signId).then((result) => {
+            const signId = result.rows;
 
-//             //id key from object inside an array x[0].id
+            db.countSigners().then((result) => {
+                const countRows = result.rows;
+                res.render("thanks", {
+                    title: "thanks",
+                    countRows,
+                    signId,
+                    cookie: true,
+                });
+            });
+        });
+    } else {
+        res.redirect("/");
+    }
+});
 
-//             req.session.signatureId = result.rows[0].id;
-//             req.session.signedPetition = true;
-//             res.redirect("/petition/thanks");
-//         })
-//         .catch((err) => {
-//             console.log("error in db.add actor ", err);
-//             res.render("petition", {
-//                 title: "petition",
-//                 error: true,
-//             });
-//         });
-// });
-//-------------------------------------------------------
+app.get("/signers", (req, res) => {
+    if (req.session.signId) {
+        db.getSigner()
+            .then((result) => {
+                const signers = result.rows;
+                console.log("SIGNERSSSSS:", signers);
+                res.render("signers", {
+                    title: "signers",
+                    signers,
+                    cookie: true,
+                });
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
+    } else {
+        res.redirect("/");
+    }
+});
+
+app.get("/logout", (req, res) => {
+    req.session = null;
+    res.redirect("/petition");
+});
+
 app.listen(PORT, () => console.log("you got this petition..."));

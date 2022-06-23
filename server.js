@@ -2,8 +2,24 @@ const express = require("express");
 const app = express();
 const db = require("./db");
 const PORT = 8080;
-// const bcrypt = require("./bcrypt");
-// console.log(bcrypt);
+
+// BCRYPT
+const bcrypt = require("./bcrypt");
+console.log(bcrypt);
+
+bcrypt
+    .hash()
+    .then(function (hash) {
+        console.log(hash);
+        return bcrypt.compare("funkychicken", hash);
+    })
+    .then(function (isCorrect) {
+        if (isCorrect) {
+            console.log("correct!");
+        } else {
+            console.log("WRONG!");
+        }
+    });
 
 //setup HB-EXPRESS
 const { engine } = require("express-handlebars");
@@ -97,5 +113,29 @@ app.get("/logout", (req, res) => {
     req.session = null;
     res.redirect("/petition");
 });
+
+//----------------PART 3------------
+
+app.get("/register", (req, res) => {
+    res.render("register");
+});
+
+app.post("/register", (req, res) => {
+    console.log("REQ.BODY: ", req.body);
+    bcrypt.hash(req.body.password).then(() => {
+        db.insrtHshPassToDb();
+    });
+    res.redirect("login");
+});
+
+app.get("/login", (req, res) => {
+    res.render("login");
+});
+
+app.post("/login", (req, res) => {
+    console.log(req.body);
+    res.redirect("petition");
+});
+//----------------PART 4--------------
 
 app.listen(PORT, () => console.log("you got this petition..."));

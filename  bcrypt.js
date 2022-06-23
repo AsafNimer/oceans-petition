@@ -7,4 +7,4 @@ exports.hash = (password) => {
     });
 };
 
-exports.compare = bcrypt.compare; //when user logs in
+// exports.compare = bcrypt.compare; //when user logs in

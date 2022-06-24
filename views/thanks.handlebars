@@ -1,5 +1,11 @@
 <section class="thanks-section">
     <h3>THANK YOU!</h3>
+    {{!-- {{#if res.error=true}}
+<h1>Error occur, Failed to log-in</h1>
+{{/if}} --}}
+    <img src="{{signatureSrc}}" />
 
-    <h4><a href="/signers">Click here to see who already joined</a></h4>
+    <h4><a href="/signers">Click here to see who already joined. We have a total
+            of:
+            {{totalSigners}}</a></h4>
 </section>

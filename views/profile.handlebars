@@ -1,3 +1,33 @@
 <section class="profile-section">
-    <h1>HERE IS THE PROFILE PAGE</h1>
+    <h1>Tell us a bit more about yourself.</h1>
+    <form
+        action="/profile"
+        method="post"
+        name="register-form"
+        id="register-form"
+    >
+        <input
+            class="profile-input"
+            type="number"
+            id="input-age"
+            name="age"
+            placeholder="Age"
+        />
+        <input
+            class="profile-input"
+            type="text"
+            id="city"
+            name="city"
+            placeholder="City"
+        />
+        <input
+            class="profile-input"
+            type="url"
+            id="user-website-input"
+            name="user-website"
+            placeholder="Website"
+        /><br /><br />
+        <button id="profile-button">Continue</button>
+    </form>
+    <a href="/petition">Skip this</a>
 </section>

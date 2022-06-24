@@ -4,6 +4,7 @@ let y = 0;
 
 const signCanvas = document.getElementById("canvas");
 const context = signCanvas.getContext("2d");
+const submitButton = document.getElementById("button-submit");
 
 signCanvas.addEventListener("mousedown", (e) => {
     x = e.offsetX;
@@ -19,13 +20,12 @@ signCanvas.addEventListener("mousemove", (e) => {
     }
 });
 
-window.addEventListener("mouseup", (e) => {
+signCanvas.addEventListener("mouseup", (e) => {
     if (isDrawing === true) {
         drawLine(context, x, y, e.offsetX, e.offsetY);
         x = 0;
         y = 0;
         isDrawing = false;
-        document.getElementById("signature").value = signCanvas.toDataURL();
     }
 });
 
@@ -38,3 +38,7 @@ function drawLine(context, x1, y1, x2, y2) {
     context.stroke();
     context.closePath();
 }
+
+submitButton.addEventListener("click", () => {
+    document.getElementById("signature").value = signCanvas.toDataURL();
+});

@@ -64,7 +64,6 @@ app.get("/thanks", (req, res) => {
     if (req.session.signatureId) {
         console.log("in read cookie route");
         console.log("req.session.signatureId ", req.session.signatureId);
-
         Promise.all([
             db.getSignatureById(req.session.signatureId),
             db.countSigners(),
@@ -88,7 +87,7 @@ app.get("/thanks", (req, res) => {
 
 app.get("/logout", (req, res) => {
     req.session = null;
-    res.redirect("/login");
+    res.redirect("/register");
 });
 app.get("/register", (req, res) => {
     res.render("register");
@@ -131,6 +130,7 @@ app.get("/signers/:city", (req, res) => {
 app.get("/edit", (req, res) => {
     db.getProfileForEdit(req.session.userId)
         .then((result) => {
+            console.log(result.rows);
             res.render("edit", {
                 userResults: result.rows,
             });
@@ -139,11 +139,15 @@ app.get("/edit", (req, res) => {
             console.log(err);
         });
 });
+
+app.get("/profile", (req, res) => {
+    res.render("profile");
+});
 /* -------------------------------
           APP     POST
 -------------------------------*/
 app.post("/petition", (req, res) => {
-    db.addSigner(req.session.userId, req.body.signature)
+    db.addSigner(req.body.signature, req.session.userId)
         .then((results) => {
             req.session.signatureId = results.rows[0].id;
             res.redirect("/thanks");
@@ -178,55 +182,87 @@ app.post("/register", (req, res) => {
                 .then((result) => {
                     req.session.userId = result.rows[0].id;
                     res.redirect("/profile");
+                })
+                .catch((err) => {
+                    console.log("ERROR WITH ADDING THE USER ", err);
+                    res.redirect("register", {
+                        title: "Registration Form",
+                        error: true,
+                    });
                 });
         })
         .catch((err) => {
-            console.log("User exists. redirect to log-in ", err);
-            res.redirect("login", {
-                userExists: "User exists, sign in please.",
-            });
+            console.log("ERROR WITH BCRYPT ", err);
         });
 });
 
 app.post("/login", (req, res) => {
-    db.getUserByEmail(req.body.email).then((result) => {
-        return bcrypt
-            .compare(req.body.password, result.row[0].password)
-            .then((hashedPass) => {
-                if (!hashedPass) {
-                    console.log("ERROR, FAIL TO LOAD PETITION");
-                    res.render("login", {
-                        errorMsg: "Password not valid",
+    db.getUserByEmail(req.body.email)
+        .then((results) => {
+            if (results.rows[0]) {
+                console.log(
+                    "USER'S PASS FROM DATABASE",
+                    results.rows[0].password
+                );
+                bcrypt
+                    .compare(req.body.password, results.rows[0].password)
+                    .then((correct) => {
+                        if (correct) {
+                            req.session.login = true;
+                            req.session.userId = results.rows[0].id;
+
+                            db.checkForSignature(req.session.userId)
+                                .then((results) => {
+                                    console.log(
+                                        "results.rows[0]",
+                                        results.rows[0]
+                                    );
+                                    if (results.rows[0]) {
+                                        req.session.signed = true;
+                                        console.log(
+                                            "user has signed and log in",
+                                            results.rows[0]
+                                        );
+                                        req.session.signatureId =
+                                            results.rows[0].id;
+                                        res.redirect("/thanks");
+                                    } else {
+                                        res.redirect("/petition");
+                                    }
+                                })
+                                .catch((err) => {
+                                    console.log(err);
+                                });
+                        } else {
+                            console.log("HASHED PASS HAS NO MATCH");
+                            res.render("login");
+                        }
                     });
-                } else if (hashedPass) {
-                    if (req.session.signatureId) {
-                        res.render("thanks");
-                    } else {
-                        req.session.userId = result.row[0];
-                        res.redirect("petition");
-                    }
-                }
-            })
-            .catch((err) => {
-                console.log("CATCH ERROR OF POST LOGIN PAGE QUERY ", err);
-                res.redirect("login");
-            });
-    });
+            } else {
+                res.render("login");
+            }
+        })
+        .catch((err) => {
+            console.log("err in login", err);
+        });
 });
 
 app.post("/profile", (req, res) => {
-    if (outerFunction.isObjectEmpty(req.body)) {
+    console.log(req.body);
+    if (!outerFunction.isObjectEmpty(req.body)) {
+        console.log("HELLO");
         return db
             .userProfileDetails(
                 req.body.age,
                 req.body.city,
-                req.body.profilepage,
+                req.body.url,
                 req.session.userId
             )
             .then(() => {
-                res.redirect("petition");
+                res.redirect("/petition");
             })
-            .catch(() => {
+            .catch((err) => {
+                console.log("sth went wrong", err);
                 res.render("profile", {
                     sthWentWrong: "Something went wrong, try again",
                 });

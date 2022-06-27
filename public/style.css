@@ -2,19 +2,11 @@
     /* background-color: rgb(207, 244, 244); */
     background-color: yellow;
 }
-/*----------------------homepage template-------------------*/
-/*
-.homepage-section h1 {
-}
 
-.homepage-section h2 {
-}
-
-.homepage-section a {
+a {
     text-decoration: none;
     color: rgb(238, 66, 9);
-} */
-
+}
 /* ----------------------main template--------------------- */
 /* .main-section body {
     width: 100%;
@@ -195,7 +187,8 @@
     text-decoration: none;
     color: rgb(238, 66, 9);
 } */
-
 /* ----------------------login template--------------------- */
 
 /* ----------------------profile template--------------------- */
+
+/* ----------------------edit template--------------------- */

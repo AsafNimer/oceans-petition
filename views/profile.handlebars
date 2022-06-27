@@ -1,5 +1,5 @@
 <section class="profile-section">
-
+    {{>logout}}
     {{#if sthWentWrong}}
         <h2>{{sthWentWrong}}</h2>
     {{/if}}
@@ -28,7 +28,7 @@
             class="profile-input"
             type="url"
             id="user-website-input"
-            name="user-website"
+            name="url"
             placeholder="Website"
         /><br /><br />
         <button id="profile-button">Continue</button>

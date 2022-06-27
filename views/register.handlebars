@@ -1,4 +1,7 @@
 <section class="register-section">
+    {{#if userExists}}
+        <h2>{{userExists}}</h2>
+    {{/if}}
     <form
         action="/register"
         method="post"

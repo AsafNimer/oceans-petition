@@ -1,4 +1,8 @@
 <section class="profile-section">
+
+    {{#if sthWentWrong}}
+        <h2>{{sthWentWrong}}</h2>
+    {{/if}}
     <h1>Tell us a bit more about yourself.</h1>
     <form
         action="/profile"

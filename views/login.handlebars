@@ -1,5 +1,6 @@
 <section class="login-section">
     <h3 id="sign-in-title">Please sign in</h3>
+    {{>error}}
     <form action="" method="post" name="login-form" id="login-form">
         <input
             class="login-input"
@@ -23,4 +24,7 @@
             class="register"
         >Submit</button>
     </form>
+    {{#if msg}}
+        {{msg}}
+    {{if/}}
 </section>

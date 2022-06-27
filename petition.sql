@@ -25,3 +25,5 @@ CREATE TABLE user_profile (
     age VARCHAR,
     profilepage VARCHAR
 );
+
+

@@ -1,0 +1,64 @@
+<section class="edit section">
+    <h1>Edit your profile</h1>
+    <form action="/edit" method="post" name="edit-form" id="edit-form">
+        {{#userResults}}
+        <input
+            class='firtsname-input"'
+            type="text"
+            id="input_firstname"
+            name="first_name"
+            value="{{first}}"
+        /><br><label for="first" id="firstname_label">First Name</label><br />
+        
+        <input
+            class='lastname-input"'
+            type="text"
+            id="input_lastName"
+            name="last_name"
+            value="{{last}}"
+        /><br>
+        <label for="last" id="lastname_label">Last Name</label><br />
+        <input
+            class='email-input"'
+            type="email"
+            id="input_email"
+            name="email_address"
+            value="{{email}}"
+        /><br>
+        <label for="email" id="email_label">Email</label><br />
+        <input
+            class='password-input"'
+            type="password"
+            id="password"
+            name="password"
+            value="{{password}}"
+        /><br>
+        <label for="password" id="Password_label">Password</label><br />
+        <input
+            class='age-input"'
+            type="number"
+            id="age"
+            name="age"
+            value="{{age}}"
+        /><br>
+        <label for="age" id="age_label">Age</label><br />
+        <input
+            class='city-input"'
+            type="text"
+            id="city"
+            name="city"
+            value="{{city}}"
+        /><br>
+        <label for="city" id="city_label">City</label><br />
+        <input
+            class="homepage-input"
+            type="url"
+            id="user-website-input"
+            name="user-website"
+            value="{{profilepage}}"
+        /><br>
+        <label for="homepage" id="homepage_label">Home Page</label><br />
+        <button class="update-button">Update</button>
+    </form>
+    {{/userResults}}
+</section>

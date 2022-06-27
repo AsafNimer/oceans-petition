@@ -118,8 +118,8 @@ app.get("/signers/:city", (req, res) => {
     db.getSignersByCity(req.params.city)
         .then(() => {
             res.render("signers", {
-                cityName: req.params.city,
-                pplWhoSigned: req.rows,
+                city: req.params.city,
+                signedPpl: req.rows,
             });
         })
         .catch((err) => {
@@ -185,7 +185,7 @@ app.post("/register", (req, res) => {
                 })
                 .catch((err) => {
                     console.log("ERROR WITH ADDING THE USER ", err);
-                    res.redirect("register", {
+                    res.render("register", {
                         title: "Registration Form",
                         error: true,
                     });
@@ -201,7 +201,7 @@ app.post("/login", (req, res) => {
         .then((results) => {
             if (results.rows[0]) {
                 console.log(
-                    "USER'S PASS FROM DATABASE",
+                    "USER'S PASSWORD FROM DATABASE",
                     results.rows[0].password
                 );
                 bcrypt
@@ -239,7 +239,9 @@ app.post("/login", (req, res) => {
                         }
                     });
             } else {
-                res.render("login");
+                res.render("login", {
+                    errorMsg: "Not valid, try again",
+                });
             }
         })
         .catch((err) => {
@@ -264,7 +266,7 @@ app.post("/profile", (req, res) => {
             .catch((err) => {
                 console.log("sth went wrong", err);
                 res.render("profile", {
-                    sthWentWrong: "Something went wrong, try again",
+                    errorMsg: "Something went wrong",
                 });
             });
     } else {

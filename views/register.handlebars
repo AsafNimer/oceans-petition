@@ -1,7 +1,9 @@
 <section class="register-section">
-    {{#if userExists}}
-        <h2>{{userExists}}</h2>
+
+    {{#if error}}
+        <h2>email registered, go to login.</h2>
     {{/if}}
+
     <form
         action="/register"
         method="post"
@@ -45,4 +47,5 @@
 
     <h4 id="register-title">Already a member ?
         <a id="sign-in-link" href="/login">Sign in</a></h4>
+
 </section>

@@ -139,7 +139,7 @@ RIGHT JOIN signatures
 ON signatures.user_id=users.id
 JOIN user_profile
 ON user_profile.user_id = users.id
-WHERE user_profile.city = $1
+WHERE LOWER user_profile.city = LOWER $1
 ORDER BY users.last`,
         [city]
     );

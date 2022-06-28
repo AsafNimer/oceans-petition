@@ -1,5 +1,5 @@
 <section class="edit-section">
-    {{>logout}}
+    
     <h1>Edit your profile</h1>
     <form action="/edit" method="post" name="edit-form" id="edit-form">
         {{#userResults}}
@@ -56,10 +56,11 @@
             class="homepage-input"
             type="url"
             id="user-website-input"
-            name="user-website"
+            name="profilepage"
             value="{{profilepage}}"
         /><br><br>
         <button class="update-button">Update</button>
     </form>
+    {{>logout}}
     {{/userResults}}
 </section>

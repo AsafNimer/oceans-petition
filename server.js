@@ -299,7 +299,6 @@ app.post("/edit", (req, res) => {
             .hash(req.body.password)
             .then((hashed) => {
                 console.log("PASSWORD HASHED");
-                /* ----------?"hash"?-----------*/
                 db.updateUserPassword(
                     req.body.first,
                     req.body.last,
@@ -312,7 +311,7 @@ app.post("/edit", (req, res) => {
                             req.body.age,
                             req.body.city,
                             req.body.profilepage,
-                            req.session.userId // req.session.id
+                            req.session.userId
                         )
                             .then(() => {
                                 console.log("Hello!");
@@ -334,14 +333,14 @@ app.post("/edit", (req, res) => {
             req.body.first,
             req.body.last,
             req.body.email,
-            req.session.userId // req.session.id????
+            req.session.userId
         )
             .then(() => {
                 db.updateProfile(
                     req.body.age,
                     req.body.city,
                     req.body.profilepage,
-                    req.session.userId // req.session.id
+                    req.session.userId
                 )
                     .then(() => {
                         res.redirect("/login");

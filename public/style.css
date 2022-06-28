@@ -1,21 +1,42 @@
-* {
-    /* background-color: rgb(207, 244, 244); */
-    /* background-color: yellow; */
+/*-----------------------HOME TEMPLATE----------------------*/
+.home-section {
+    display: flex;
 }
 
-a {
-    text-decoration: none;
-    color: rgb(238, 66, 9);
+.home-section h1 {
+    position: relative;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+    font-size: 100px;
+    height: 25px;
+    width: 100%;
+    top: 100px;
+    margin-left: 40px;
+    color: rgb(44, 40, 40);
+}
+
+.home-section form {
+    align-self: center;
+    justify-self: center;
+}
+
+.home-section button {
+    position: relative;
+    color: white;
+    font-size: 25px;
+    background-color: black;
+    width: 250px;
+    height: 60px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+    left: 450px;
+    top: 400px;
+    border-radius: 5px;
     font-weight: lighter;
 }
 /* ----------------------main template--------------------- */
-/* .body-section {
-    display: flex;
-} */
-
-.body-section div {
+.body-section {
     position: absolute;
-    /* display: flex; */
     width: 100%;
     min-height: 100vh;
     display: relative;
@@ -55,35 +76,16 @@ main h1 {
     position: relative;
     align-self: center;
 }
-/*
-.header-section a {
-    text-decoration: none;
-    color: black;
-} */
-
-/* .body-section footer {
-    position: absolute;
-    height: 300px;
-    width: 100%;
-    background-color: black;
-    align-self: flex-end;
-} */
-
 /* ----------------------petition template--------------------- */
-/*
+
 .petition-section {
     position: absolute;
-    display: flex;
-    justify-content: center;
-    align-content: center;
 }
 
-/*.petition-section h2 {
+.petition-section h2 {
     position: relative;
-    align-self: center;
-    width: 100%;
-    left: -390px;
-    top: -100px;
+    left: 200px;
+    left: 450px;
     font-weight: lighter;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
         sans-serif;
@@ -99,58 +101,100 @@ main h1 {
     height: 45px;
 }
 
-.petition-section label {
+.petition-section button {
     position: relative;
-    top: 10px;
-    font-size: 20px;
-    font-weight: lighter;
+    color: white;
+    font-size: 25px;
+    background-color: black;
+    width: 250px;
+    height: 60px;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
         sans-serif;
+    left: 300px;
+    top: 200px;
+    border-radius: 5px;
+    font-weight: lighter;
 }
-
-.petition-section input {
-    position: relative;
-    background-color: white;
-    margin: 15px;
-    width: 200px;
-    height: 30px;
-}
-
-.petition-section button {
-    background-color: black;
-    border: solid 0.5px black;
-    color: white;
-    border-radius: 15px;
-    position: relative;
-    width: 150px;
-    height: 30px;
-    left: 50px;
-    margin: 25px;
-}*/
 
 .petition-section canvas {
+    position: absolute;
     background-color: white;
     position: absolute;
-    top: 130px;
-    border: solid black 0.5px;
+    top: -20px;
+    left: 100px;
+    border: none black;
+    border-radius: 10px;
+}
+
+.petition-section a {
+    position: absolute;
+    text-decoration: none;
+    color: rgb(238, 66, 9);
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+    font-weight: lighter;
+    font-size: 25px;
+    top: 500px;
+    left: 775px;
+    width: 100%;
 }
 /* ----------------------thanks template--------------------- */
-/* .thanks-section h3 {
-    position: relative;
-    top: 250px;
-    left: 100px;
+.thanks-section {
+    position: absolute;
+}
+
+.thanks-section h5 {
+    position: absolute;
+    left: 350px;
     width: 100%;
     font-weight: lighter;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
         sans-serif;
-    font-size: 40px; 
+    font-size: 20px;
+    top: 450px;
+    left: 735px;
+    color: rgb(238, 66, 9);
 }
 
-/* .thanks-section h4 {
+.thanks-section #thank-you {
+    position: absolute;
+    left: 350px;
+    width: 100%;
+    font-weight: lighter;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+    font-size: 40px;
+}
+
+.thanks-section img {
+    position: absolute;
+    background-color: white;
+    width: 500px;
+    height: 200px;
+    border-radius: 10px;
+    top: 150px;
+    left: 550px;
+}
+
+.thanks-section #delete-button {
+    position: relative;
+    color: white;
+    font-size: 20px;
+    background-color: black;
+    width: 150px;
+    height: 40px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+    left: 720px;
+    top: 300px;
+    border-radius: 5px;
+    font-weight: lighter;
+}
+
+.thanks-section h4 {
     position: relative;
     justify-self: center;
-    top: 320px;
-    left: -550px;
+    left: 480px;
     width: 100vw;
     font-weight: lighter;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
@@ -158,16 +202,32 @@ main h1 {
     font-size: 35px;
 }
 
-.thanks-section a {
+.thanks-section #signers-link {
+    position: absolute;
     text-decoration: none;
-    /* color: rgb(217, 114, 11); 
     color: rgb(238, 66, 9);
-} */
-
-.thanks-section img {
-    background-color: white;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+    font-weight: lighter;
+    font-size: 25px;
+    top: 35px;
 }
 
+.thanks-section #logout-partial {
+    position: absolute;
+    text-decoration: none;
+    color: rgb(238, 66, 9);
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+    font-weight: lighter;
+    font-size: 25px;
+    top: 430px;
+    left: 755px;
+}
+
+.thanks-section #edit-link {
+    color: black;
+}
 /* ----------------------signers template--------------------- */
 /*
 .signers-section {
@@ -204,12 +264,157 @@ main h1 {
 } */
 
 /* ----------------------register template--------------------- */
-/* .register-section a {
+.register-section {
+    position: absolute;
+    top: 200px;
+    left: 650px;
+}
+
+.register-section a {
     text-decoration: none;
     color: rgb(238, 66, 9);
-} */
+}
+
+.register-section h2 {
+    font-weight: lighter;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+    color: tomato;
+}
+
+.register-section input {
+    width: 300px;
+    height: 40px;
+    font-size: 15px;
+    font-weight: lighter;
+    border: none;
+}
+
+.register-section button {
+    position: relative;
+    color: white;
+    font-size: 25px;
+    background-color: black;
+    width: 200px;
+    height: 40px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+    font-weight: lighter;
+    left: 50px;
+    border-radius: 5px;
+    font-weight: lighter;
+}
+
+.register-section h4 {
+    font-size: 25px;
+    font-weight: lighter;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+}
 /* ----------------------login template--------------------- */
+.login-section {
+    position: absolute;
+    top: 200px;
+    left: 650px;
+}
+
+.login-section h2 {
+    font-size: 25px;
+    font-weight: lighter;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+}
+
+.login-section h3 {
+    font-size: 25px;
+    font-weight: lighter;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+}
+
+.login-section a {
+    text-decoration: none;
+    color: rgb(238, 66, 9);
+}
+
+.login-section input {
+    width: 300px;
+    height: 40px;
+    font-size: 15px;
+    font-weight: lighter;
+    border: none;
+}
+
+.login-section button {
+    position: relative;
+    color: white;
+    font-size: 25px;
+    background-color: black;
+    width: 200px;
+    height: 40px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+    font-weight: lighter;
+    left: 50px;
+    border-radius: 5px;
+    font-weight: lighter;
+}
 
 /* ----------------------profile template--------------------- */
+.profile-section {
+    position: absolute;
+    top: 200px;
+    left: 650px;
+}
 
+.profile-section h2 {
+    font-size: 25px;
+    font-weight: lighter;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+}
+
+.profile-section p {
+    font-size: 25px;
+    font-weight: lighter;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+}
+
+.profile-section input {
+    width: 300px;
+    height: 40px;
+    font-size: 15px;
+    font-weight: lighter;
+    border: none;
+}
+
+.profile-section button {
+    position: relative;
+    color: white;
+    font-size: 25px;
+    background-color: black;
+    width: 200px;
+    height: 40px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+    font-weight: lighter;
+    left: 50px;
+    border-radius: 5px;
+    font-weight: lighter;
+}
+
+.profile-section h4 {
+    font-size: 25px;
+    font-weight: lighter;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+    text-decoration: none;
+    color: rgb(238, 66, 9);
+}
+
+.profile-section a {
+    text-decoration: none;
+    color: rgb(238, 66, 9);
+}
 /* ----------------------edit template--------------------- */

@@ -1,12 +1,15 @@
 <section class="thanks-section">
-    {{>logout}}
-    <a href="/edit"><h3>Edit your profile</h3></a>
-    <h3>Thank you {{first}} for joining, We appreciate your support!</h3>
+  
+    <h3 id="thank-you">Thank you {{first}} for joining. We appreciate your support!</h3>
     <img src="{{signatureSrc}}" /><br />
-    <form action="/thanks" method="post" name="form">
-        <button>Delete</button>
+
+     <h4><a id="signers-link" href="/signers">Click here to see those who joined. There are already 
+            {{totalSigners}} supporters </a></h4>
+    <form action="/thanks" method="post" name="delete">
+        <button id="delete-button">Delete</button>
     </form>
 
-    <h4><a href="/signers">Click here to see those who joined. There are already 
-            {{totalSigners}} supporters </a></h4>
+    {{>logout}}
+    <a id="edit-link" href="/edit"><h5>Edit your profile</h5></a>
+   
 </section>

@@ -43,7 +43,11 @@ app.use((req, res, next) => {
 
 app.use((req, res, next) => {
     if (!req.session.userId) {
-        if (req.url != "/register" && req.url != "/login") {
+        if (
+            req.url != "/register" &&
+            req.url != "/login" &&
+            req.url != "/home"
+        ) {
             res.redirect("/register");
         }
     }
@@ -52,6 +56,10 @@ app.use((req, res, next) => {
 /* -------------------------------
           APP     GET
 -------------------------------*/
+app.get("/home", (req, res) => {
+    res.render("home");
+});
+
 app.get("/petition", (req, res) => {
     if (req.session.signatureId) {
         res.redirect("/thanks");
@@ -152,6 +160,10 @@ app.get("/profile", (req, res) => {
 /* -------------------------------
           APP     POST
 -------------------------------*/
+app.post("/home", (req, res) => {
+    res.redirect("/register");
+});
+
 app.post("/petition", (req, res) => {
     db.addSigner(req.body.signature, req.session.userId)
         .then((results) => {

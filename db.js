@@ -11,6 +11,10 @@ const db = spicedPg(
 /* ---------------------------------------------
             Users Table
 ------------------------------------------------*/
+module.exports.getUserName = (userId) => {
+    return db.query(`SELECT first FROM users WHERE id = $1`, [userId]);
+};
+
 module.exports.addNewUser = (first, last, email, password) => {
     console.log("(first, last, email, password)", first, last, email, password);
     const q = `INSERT INTO users (first, last, email, password) VALUES ($1, $2, $3, $4)
@@ -133,14 +137,13 @@ ORDER BY users.last`
 
 module.exports.getSignersByCity = (city) => {
     return db.query(
-        `SELECT users.first, users.last, signatures.id AS "signatureId", user_profile.city, user_profile.age, user_profile.profilepage
-FROM users
-RIGHT JOIN signatures
-ON signatures.user_id=users.id
-JOIN user_profile
-ON user_profile.user_id = users.id
-WHERE LOWER user_profile.city = LOWER $1
-ORDER BY users.last`,
+        `SELECT users.first, users.last, signatures.id, user_profile.age, user_profile.profilepage
+        FROM users
+        JOIN signatures
+        ON users.id = signatures.user_id
+        LEFT JOIN user_profile
+        ON users.id = user_profile.user_id
+        WHERE LOWER(city) = LOWER($1)`,
         [city]
     );
 };

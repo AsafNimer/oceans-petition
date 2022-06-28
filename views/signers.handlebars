@@ -1,12 +1,19 @@
 <section class="signers-section">
     {{>logout}}
-    <h5>Those are the people who signed:</h5>
-    <ol id="signers">
+    
+    {{#if listOfSigners}}
+    <h4>Those are the people who signed:</h4>
         {{#listOfSigners}}
-            <li class="signer-item">
-                <p>{{first}} {{last}} {{age}} {{city}} </p>
-            </li>
-            <a href="/signers/{{cityName}}">{{cityName}}</a>
+            <h4>{{first}} {{last}} {{age}}
+            <a href="/petition/signers/{{city}}">{{city}}</a></h4>
         {{/listOfSigners}}
-    </ol>
+    {{/if}}
+    {{#if results}}
+        <h4>Those are the people from {{city}} who signed:</h4>
+        {{#results}}
+            <p> {{first}} {{last}} {{age}}</p>
+        {{/results}}
+    {{/if}}
+
+    
 </section>

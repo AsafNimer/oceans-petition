@@ -1,13 +1,12 @@
 <section class="thanks-section">
     {{>logout}}
     <a href="/edit"><h3>Edit your profile</h3></a>
-    <h3>Thank you!</h3>
+    <h3>Thank you {{first}} for joining, We appreciate your support!</h3>
     <img src="{{signatureSrc}}" /><br />
     <form action="/thanks" method="post" name="form">
         <button>Delete</button>
     </form>
 
-    <h4><a href="/signers">Click here to see who already joined. We have a total
-            of:
-            {{totalSigners}}</a></h4>
+    <h4><a href="/signers">Click here to see those who joined. There are already 
+            {{totalSigners}} supporters </a></h4>
 </section>

@@ -1,6 +1,8 @@
 <section class="profile-section">
     {{>logout}}
-    {{>error}}
+    {{#if error}} 
+        <h2>Something went wrong!</h2>
+    {{/if}}
     <h1>Tell us a bit more about yourself.</h1>
     <form
         action="/profile"

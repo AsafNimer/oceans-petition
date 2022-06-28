@@ -62,24 +62,25 @@ app.get("/petition", (req, res) => {
 
 app.get("/thanks", (req, res) => {
     if (req.session.signatureId) {
-        console.log("in read cookie route");
-        console.log("req.session.signatureId ", req.session.signatureId);
         Promise.all([
             db.getSignatureById(req.session.signatureId),
             db.countSigners(),
+            db.getUserName(req.session.userId),
         ])
             .then((result) => {
                 console.log("Result all promise", result[0].rows[0]);
                 console.log("Result all promise", result[1].rows[0]);
+                console.log("Result all promise FIRST", result[2].rows[0]);
 
                 res.render("thanks", {
                     title: "thanks",
                     totalSigners: result[1].rows[0].count,
                     signatureSrc: result[0].rows[0].signature,
                     cookie: true,
+                    first: result[2].rows[0].first,
                 });
             })
-            .catch((err) => console.log("All prom Error", err));
+            .catch((err) => console.log("ERROR promiseAll", err));
     } else {
         res.redirect("/");
     }
@@ -107,24 +108,29 @@ app.get("/signers", (req, res) => {
             res.render("signers", {
                 title: "Signers",
                 listOfSigners: result.rows,
+                renderSigners: true,
             });
         })
-
         .catch((err) => console.log("Error:", err));
 });
 
-app.get("/signers/:city", (req, res) => {
-    console.log("req.params.city: ", req.params.city);
-    db.getSignersByCity(req.params.city)
-        .then(() => {
-            res.render("signers", {
-                city: req.params.city,
-                signedPpl: req.rows,
+app.get("/petition/signers/:city", (req, res) => {
+    if (req.session.signatureId) {
+        db.getSignersByCity(req.params.city)
+            .then((result) => {
+                res.render("signers", {
+                    title: "Signers City",
+                    results: result.rows,
+                    city: req.params.city,
+                    renderSignersCity: true,
+                });
+            })
+            .catch((err) => {
+                console.log("error is ", err);
             });
-        })
-        .catch((err) => {
-            console.log("ERROR, FAILED TO LOAD SIGNERS", err);
-        });
+    } else {
+        res.redirect("/petition");
+    }
 });
 
 app.get("/edit", (req, res) => {
@@ -240,7 +246,7 @@ app.post("/login", (req, res) => {
                     });
             } else {
                 res.render("login", {
-                    errorMsg: "Not valid, try again",
+                    error: true,
                 });
             }
         })
@@ -266,7 +272,7 @@ app.post("/profile", (req, res) => {
             .catch((err) => {
                 console.log("sth went wrong", err);
                 res.render("profile", {
-                    errorMsg: "Something went wrong",
+                    error: true,
                 });
             });
     } else {
@@ -295,9 +301,7 @@ app.post("/edit", (req, res) => {
                             req.session.userId
                         )
                             .then(() => {
-                                res.render("login", {
-                                    msg: "Your profile is updated, please log in again.",
-                                });
+                                res.render("login");
                             })
                             .catch((err) => {
                                 console.log("ERROR in updateProfile ", err);
@@ -325,9 +329,7 @@ app.post("/edit", (req, res) => {
                     req.session.userId
                 )
                     .then(() => {
-                        res.render("login", {
-                            msg: "Your profile is updated, please log in again.",
-                        });
+                        res.render("login");
                     })
                     .catch((err) => {
                         console.log("ERROR in updateProfile ", err);
@@ -342,11 +344,12 @@ app.post("/edit", (req, res) => {
 app.post("/thanks", (req, res) => {
     db.deleteSignature(req.session.userId)
         .then(() => {
-            !req.session.signatureId;
-            res.redirect("petition");
+            req.session.signatureId = null;
+            res.redirect("/petition");
         })
         .catch((err) => {
             console.log("ERROR ON DELETE SIGNATURE ", err);
+            res.render("error");
         });
 });
 

@@ -3,30 +3,31 @@
     <h1>Edit your profile</h1>
     <form action="/edit" method="post" name="edit-form" id="edit-form">
         {{#userResults}}
+        <label for="first" id="firstname_label">First Name</label><br />
         <input
             class='firtsname-input"'
             type="text"
             id="input_firstname"
-            name="first_name"
+            name="first"
             value="{{first}}"
-        /><br><label for="first" id="firstname_label">First Name</label><br />
-        
+        /><br>
+        <label for="last" id="lastname_label">Last Name</label><br />
         <input
             class='lastname-input"'
             type="text"
             id="input_lastName"
-            name="last_name"
+            name="last"
             value="{{last}}"
         /><br>
-        <label for="last" id="lastname_label">Last Name</label><br />
+        <label for="email" id="email_label">Email</label><br />
         <input
             class='email-input"'
             type="email"
             id="input_email"
-            name="email_address"
+            name="email"
             value="{{email}}"
         /><br>
-        <label for="email" id="email_label">Email</label><br />
+        <label for="password" id="Password_label">Password</label><br />
         <input
             class='password-input"'
             type="password"
@@ -34,7 +35,7 @@
             name="password"
             value="{{password}}"
         /><br>
-        <label for="password" id="Password_label">Password</label><br />
+        <label for="age" id="age_label">Age</label><br />
         <input
             class='age-input"'
             type="number"
@@ -42,7 +43,7 @@
             name="age"
             value="{{age}}"
         /><br>
-        <label for="age" id="age_label">Age</label><br />
+        <label for="city" id="city_label">City</label><br />
         <input
             class='city-input"'
             type="text"
@@ -50,15 +51,14 @@
             name="city"
             value="{{city}}"
         /><br>
-        <label for="city" id="city_label">City</label><br />
+        <label for="homepage" id="homepage_label">Home Page</label><br />
         <input
             class="homepage-input"
             type="url"
             id="user-website-input"
             name="user-website"
             value="{{profilepage}}"
-        /><br>
-        <label for="homepage" id="homepage_label">Home Page</label><br />
+        /><br><br>
         <button class="update-button">Update</button>
     </form>
     {{/userResults}}

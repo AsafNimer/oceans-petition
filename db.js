@@ -112,10 +112,10 @@ module.exports.userProfileDetails = (age, city, profilepage, userId) => {
 };
 
 module.exports.updateProfile = (age, city, profilepage, userId) => {
-    const q = `INSERT INTO user_profiles (age, city, profilepage, user_id)
+    const q = `INSERT INTO user_profile (age, city, profilepage, user_id)
                 VALUES ($1, $2, $3, $4)
                 ON CONFLICT (user_id)
-                DO UPDATE SET age = $1, city = $2, url = $3;`;
+                DO UPDATE SET age = $1, city = $2, profilepage = $3;`;
     const param = [age, city, profilepage, userId];
     return db.query(q, param);
 };

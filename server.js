@@ -281,16 +281,18 @@ app.post("/profile", (req, res) => {
 });
 
 app.post("/edit", (req, res) => {
+    console.log("BODY in EDIT: ", req.body);
     if (req.body.password) {
         bcrypt
             .hash(req.body.password)
-            .then((hash) => {
+            .then((hashed) => {
+                console.log("PASSWORD HASHED");
                 /* ----------?"hash"?-----------*/
                 db.updateUserPassword(
                     req.body.first,
                     req.body.last,
                     req.body.email,
-                    hash,
+                    hashed,
                     req.session.userId
                 )
                     .then(() => {
@@ -298,13 +300,14 @@ app.post("/edit", (req, res) => {
                             req.body.age,
                             req.body.city,
                             req.body.profilepage,
-                            req.session.userId
+                            req.session.userId // req.session.id
                         )
                             .then(() => {
-                                res.render("login");
+                                console.log("Hello!");
+                                res.redirect("/login");
                             })
                             .catch((err) => {
-                                console.log("ERROR in updateProfile ", err);
+                                console.log("ERROR in updateProfile", err);
                             });
                     })
                     .catch((err) => {
@@ -315,21 +318,21 @@ app.post("/edit", (req, res) => {
                 console.log("ERROR in bcrypt", err);
             });
     } else {
-        db.updateUser(
+        db.updateUsers(
             req.body.first,
             req.body.last,
             req.body.email,
-            req.session.userId
+            req.session.userId // req.session.id????
         )
             .then(() => {
                 db.updateProfile(
                     req.body.age,
                     req.body.city,
                     req.body.profilepage,
-                    req.session.userId
+                    req.session.userId // req.session.id
                 )
                     .then(() => {
-                        res.render("login");
+                        res.redirect("/login");
                     })
                     .catch((err) => {
                         console.log("ERROR in updateProfile ", err);

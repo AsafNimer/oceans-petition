@@ -1,6 +1,6 @@
 * {
     /* background-color: rgb(207, 244, 244); */
-    background-color: yellow;
+    /* background-color: yellow; */
 }
 
 a {
@@ -9,44 +9,64 @@ a {
     font-weight: lighter;
 }
 /* ----------------------main template--------------------- */
-/* .main-section body {
+/* .body-section {
+    display: flex;
+} */
+
+.body-section div {
+    position: absolute;
+    /* display: flex; */
     width: 100%;
     min-height: 100vh;
-    display: flex;
+    display: relative;
     background: url("/img.jpeg") no-repeat;
     background-size: 100vw 100vh;
 }
-.main-section main {
-    position: relative;
-}
 
-.main-section header {
+.body-section header {
     background-color: white;
-    position: absolute;
-    width: 100vw;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
     height: 200px;
     display: flex;
-    width: 100%;
-    margin: 20px;
+    object-fit: contain;
 }
 
-.header-section h1 {
+.body-section main {
+    position: relative;
+    display: flex;
+}
+
+main h1 {
     position: relative;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
         sans-serif;
+    font-size: 100px;
     height: 25px;
     width: 100%;
-    margin-right: 20px;
-    color: black;
+    top: 100px;
+    margin-left: 40px;
+    color: rgb(44, 40, 40);
 }
 
 .header-section img {
     position: relative;
+    align-self: center;
 }
-
+/*
 .header-section a {
     text-decoration: none;
     color: black;
+} */
+
+/* .body-section footer {
+    position: absolute;
+    height: 300px;
+    width: 100%;
+    background-color: black;
+    align-self: flex-end;
 } */
 
 /* ----------------------petition template--------------------- */

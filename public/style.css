@@ -229,39 +229,31 @@ main h1 {
     color: black;
 }
 /* ----------------------signers template--------------------- */
-/*
 .signers-section {
-    position: relative;
-    width: 100%;
-    top: 200px;
-    left: -150px;
+    position: absolute;
 }
 
- .signers-section h5 {
+.signers-section h4 {
     position: relative;
-    left: -50px;
-    width: 100%;
-    font-weight: lighter;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
-    font-size: 25px;
-}
-
-.signers-section li {
-    position: relative;
-    margin-bottom: 25px;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
-    font-size: 20px;
-    font-weight: lighter;
-}
-
-.signers-section p {
+    margin-left: 20px;
     font-size: 25px;
     font-weight: lighter;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
         sans-serif;
-} */
+}
+
+.signers-section #logout-partial {
+    position: absolute;
+    text-decoration: none;
+    color: rgb(238, 66, 9);
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+    font-weight: lighter;
+    font-size: 25px;
+    width: 100%;
+    top: 580px;
+    left: 750px;
+}
 
 /* ----------------------register template--------------------- */
 .register-section {
@@ -418,3 +410,67 @@ main h1 {
     color: rgb(238, 66, 9);
 }
 /* ----------------------edit template--------------------- */
+.edit-section {
+    position: absolute;
+}
+
+.edit-section h1 {
+    position: absolute;
+    top: -15px;
+    font-size: 40px;
+    font-weight: lighter;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+}
+
+.edit-section input {
+    width: 300px;
+    height: 40px;
+    font-size: 15px;
+    font-weight: lighter;
+    border: none;
+    margin-bottom: 10px;
+}
+
+.edit-section button {
+    position: relative;
+    color: white;
+    font-size: 20px;
+    background-color: black;
+    width: 150px;
+    height: 30px;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+    font-weight: lighter;
+    left: 50px;
+    border-radius: 5px;
+    font-weight: lighter;
+    left: 120px;
+}
+
+.edit-section label {
+    font-size: 25px;
+    font-weight: lighter;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+    margin-right: 15px;
+}
+
+.edit-section form {
+    position: relative;
+    top: 10px;
+    left: 650;
+}
+
+.edit-section #logout-partial {
+    position: absolute;
+    text-decoration: none;
+    color: rgb(238, 66, 9);
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+    font-weight: lighter;
+    font-size: 25px;
+    width: 100%;
+    top: 575px;
+    left: 665px;
+}

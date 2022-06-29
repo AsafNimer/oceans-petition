@@ -5,7 +5,7 @@ const outerFunction = require("./outerFunction");
 const PORT = 8080;
 
 // BCRYPT
-const bcrypt = require("./bcrypt.js");
+const bcrypt = require("./bcrypt");
 
 //setup HB-EXPRESS
 const { engine } = require("express-handlebars");

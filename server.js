@@ -3,6 +3,7 @@ const app = express();
 const db = require("./db");
 const outerFunction = require("./outerFunction");
 const PORT = 8080;
+console.log(PORT);
 
 // BCRYPT
 const bcrypt = require("./bcrypt");
@@ -48,7 +49,7 @@ app.use((req, res, next) => {
             req.url != "/login" &&
             req.url != "/home"
         ) {
-            res.redirect("/register");
+            res.redirect("/home");
         }
     }
     next();

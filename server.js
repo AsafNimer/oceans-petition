@@ -367,4 +367,6 @@ app.post("/thanks", (req, res) => {
         });
 });
 
-app.listen(PORT, () => console.log("you got this petition..."));
+app.listen(process.env.PORT || 8080, () =>
+    console.log("you got this petition...")
+);

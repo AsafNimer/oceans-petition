@@ -53,7 +53,7 @@ hr {
 header .vitaminsea-title {
     padding: 1rem;
     font-size: 4rem;
-    color: black;
+    color: rgb(5, 5, 180);
     grid-column: 1 / 2;
     grid-row: 1;
 }
@@ -75,12 +75,6 @@ header .logout-div {
 header a {
     text-decoration: none;
     color: rgb(44, 40, 40);
-}
-
-header .header-title {
-    font-weight: lighter;
-    font-size: 1rem;
-    color: black;
 }
 
 footer {
@@ -174,6 +168,10 @@ footer h6 {
 }
 /* ----------------------register template--------------------- */
 .register-section {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 2rem;
+    width: 40rem;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -237,6 +235,10 @@ footer h6 {
 }
 /* ----------------------profile template--------------------- */
 .profile-section {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 2rem;
+    width: 40rem;
+    height: auto;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -302,6 +304,10 @@ footer h6 {
 }
 /* ----------------------login template--------------------- */
 .login-section {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 2rem;
+    width: 40rem;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -359,6 +365,10 @@ footer h6 {
 }
 /* ----------------------petition template--------------------- */
 .petition-section {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 2rem;
+    width: 40rem;
+    height: auto;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -399,6 +409,10 @@ footer h6 {
 }
 /* ----------------------thanks template--------------------- */
 .thanks-section {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 2rem;
+    width: 40rem;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -454,10 +468,15 @@ footer h6 {
 }
 /* ----------------------signers template--------------------- */
 .signers-section {
+    margin-top: 3rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 2rem;
+    width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
     align-items: center;
-    width: 100%;
 }
 
 .signers-section .signers-title {
@@ -470,7 +489,7 @@ footer h6 {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    gap: 0.3rem;
+    gap: 0.3rem 0rem;
     justify-content: center;
     margin-bottom: 5rem;
 }
@@ -538,6 +557,9 @@ footer h6 {
 }
 /* ----------------------edit template--------------------- */
 .edit-section {
+    margin-top: 3rem;
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 40rem;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -599,222 +621,313 @@ footer h6 {
     height: 3rem;
     margin-top: 2rem;
 }
-/* 
-@media only screen and (max-width: 600px) and (orientation: portrait) {
-    body {
-        overflow: hidden;
-    }
 
-    header .header-title {
-        font-size: 0.8rem;
-    }
-
-    header img {
-        width: 4rem;
-        height: 4rem;
-    }
-
-    footer {
+@media only screen and (max-width: 480px) and (orientation: portrait) {
+    hr {
         display: none;
     }
 
-    .home-section {
-        margin-top: 4rem;
+    header .vitaminsea-title {
+        padding: 1rem;
+        font-size: 1.5rem;
+        align-self: center;
     }
 
+    header .logout-div {
+        font-size: 1.5rem;
+    }
+
+    .logout-div a {
+        text-decoration: none;
+        color: rgb(238, 66, 9);
+        font-weight: lighter;
+        font-size: 1rem;
+    }
+    footer {
+        display: none;
+    }
+    /*-----------------------HOME TEMPLATE <= 480px----------------------*/
     .home-section .home-title {
-        font-size: 3.5rem;
+        color: rgb(44, 40, 40);
+        font-size: 4rem;
+        width: auto;
+        margin-bottom: -5rem;
+        padding-bottom: 5rem;
     }
 
     .home-section button {
         font-size: 1rem;
-        width: 8rem;
-        height: 2rem;
-    } */
-/* ----------------------register template--------------------- */
-/* .register-section {
-        margin-top: 8rem;
-        gap: 4rem;
+        width: 10rem;
+        height: 2.5rem;
+        margin-bottom: 5rem;
+    }
+    /* ----------------------register template--------------------- */
+    .register-section {
+        background-color: rgba(255, 255, 255, 0);
+        width: auto;
     }
 
     .register-section form {
-        gap: 1rem;
+        gap: 1.2rem;
+    }
+
+    .register-section a {
+        font-size: 1.2rem;
+    }
+
+    .register-section .error-msg {
+        font-size: 1.2rem;
+    }
+
+    .register-section .register-upper-title {
+        font-size: 1.2rem;
     }
 
     .register-section input {
-        padding: 0.5rem;
-        width: 13rem;
-        height: 2.5rem;
-        font-size: 1rem;
+        padding: 0.8rem;
+        width: 20rem;
+        height: 2rem;
+        font-size: 0.8rem;
     }
 
     .register-section button {
-        font-size: 1.5rem;
-        margin-top: 2rem;
+        font-size: 1rem;
         width: 10rem;
         height: 2.5rem;
     }
 
     .register-section .go-to-sign-in {
+        font-size: 1.2rem;
+    }
+    /* ----------------------profile template--------------------- */
+    .profile-section {
+        background-color: rgba(255, 255, 255, 0);
+        padding: 0rem;
+        width: auto;
+    }
+
+    .profile-section .error-msg {
+        font-size: 1.2rem;
+    }
+
+    .profile-section .profile-title {
         font-size: 1.5rem;
     }
 
-    .register-section a {
-        font-size: 1.5rem;
-    } */
-/* ----------------------login template--------------------- */
-/* .login-section {
-        margin-top: 3rem;
+    .profile-section input {
+        padding: 0.8rem;
+        width: 20rem;
+        height: 2rem;
+        font-size: 0.8rem;
+    }
+
+    .profile-section button {
+        font-size: 1rem;
+        width: 10rem;
+        height: 2.5rem;
+    }
+
+    .profile-section .skip {
+        margin-top: 0.5rem;
+        font-size: 1.2rem;
+    }
+    /* ----------------------login template--------------------- */
+    .login-section {
+        background-color: rgba(255, 255, 255, 0);
+        width: auto;
         gap: 2rem;
     }
 
     .login-section .error-msg {
-        color: tomato;
-        font-size: 2rem;
-        font-weight: lighter;
+        font-size: 1.2rem;
     }
 
     .login-section .sign-in-title {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     .login-section a {
-        font-size: 1.8rem;
+        font-size: 1.2rem;
     }
 
     .login-section input {
-        padding: 0.5rem;
-        width: 13rem;
-        height: 2.5rem;
-        font-size: 1rem;
+        padding: 0.8rem;
+        width: 20rem;
+        height: 2rem;
+        font-size: 0.8rem;
     }
 
     .login-section button {
-        font-size: 1.5rem;
-        margin-top: 2rem;
+        font-size: 1rem;
         width: 10rem;
         height: 2.5rem;
-    } */
-/* ----------------------petition template--------------------- */
-/* .petition-section {
-        margin-top: 3rem;
-        gap: 0.5rem;
+    }
+    /* ----------------------thanks template--------------------- */
+    .thanks-section {
+        background-color: rgba(255, 255, 255, 0);
+        width: auto;
+        gap: 2.5rem;
+        justify-content: flex-start;
+    }
+
+    .thanks-section .thank-you {
+        font-size: 1.5rem;
+    }
+
+    .thanks-section img {
+        width: 25rem;
+    }
+
+    .thanks-section .delete-button {
+        font-size: 1rem;
+        width: 10rem;
+        height: 2.5rem;
+    }
+
+    .thanks-section .supporters-par {
+        font-size: 1.2rem;
+        line-height: 1.5rem;
+    }
+
+    .thanks-section .signers-link {
+        font-size: 1.2rem;
+    }
+
+    .thanks-section .edit-par {
+        font-size: 1.5rem;
+    }
+
+    .thanks-section .edit-link {
+        font-size: 1rem;
+    }
+    /* ----------------------petition template--------------------- */
+    .petition-section {
+        background-color: rgba(255, 255, 255, 0);
+        width: auto;
+        gap: 1rem;
+    }
+
+    .petition-section .petition-title {
+        font-size: 1.2rem;
+        line-height: 2rem;
     }
 
     .petition-section form {
         gap: 1rem;
     }
 
-    form canvas {
-        height: 8rem;
-        width: 17rem;
+    .petition-section canvas {
+        width: 25rem;
+        border: 1px rgb(0, 0, 0, 0.3) solid;
+        border-radius: 0px;
     }
 
-    .petition-section h2 {
+    .petition-section .submit-button {
         font-size: 1rem;
-        line-height: 2rem;
-    }
-
-    .petition-section .button-submit {
-        margin-top: 2rem;
-        font-size: 1rem;
-        width: 9rem;
+        width: 10rem;
         height: 2.5rem;
     }
-} 
-
-@media only screen and (min-width: 601px) and (max-width: 768px) {
-    body {
-        overflow: hidden;
+    /* ----------------------signers template--------------------- */
+    .signers-section {
+        background-color: rgba(255, 255, 255, 0);
+        width: auto;
+        height: auto;
     }
 
-    main .page_content_section {
-        padding-bottom: 23rem;
+    .signers-section .signers-title {
+        font-size: 1.2rem;
+        height: auto;
     }
 
-    header .header-title {
+    .signers-section .signers-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.2rem 0.2rem;
+        margin-bottom: 2rem;
+        width: auto;
+        height: auto;
+    }
+
+    .signers-container .signer-div {
+        height: 5rem;
+        width: 5rem;
+    }
+
+    .signers-section .signer {
+        font-size: 0.8rem;
+        line-height: 1.3rem;
+    }
+
+    .signers-section .same-city-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.2rem 0.2rem;
+        margin-bottom: 2rem;
+        width: auto;
+        height: auto;
+    }
+
+    .same-city-container .same-city-div {
+        height: 5rem;
+        width: 5rem;
+    }
+
+    .signers-section .same-city-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .signers-section .unknown-city {
+        font-size: 2.5rem;
+        font-weight: lighter;
+    }
+    /* ----------------------edit template--------------------- */
+    .edit-section {
+        background-color: rgba(255, 255, 255, 0);
+        justify-content: flex-start;
+        height: auto;
+        width: auto;
+        gap: 1.2rem;
+        padding-bottom: 5rem;
+    }
+
+    .edit-section .edit-title {
+        font-size: 1.5rem;
+    }
+
+    .edit-section form {
+        gap: 1rem;
+    }
+
+    .edit-section .input-div {
+        gap: 0.4rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .edit-section label {
+        font-size: 1rem;
+    }
+
+    .edit-section input {
+        padding: 0.8rem;
+        width: 20rem;
+        height: 2rem;
         font-size: 0.8rem;
     }
 
-    header img {
-        width: 4rem;
-        height: 4rem;
-    }
-
-    footer {
-        padding-top: 1rem;
-        margin-top: -23rem;
-        height: 23rem;
+    .edit-section button {
+        font-size: 1rem;
+        width: 10rem;
+        height: 2.5rem;
     }
 }
 
-@media only screen and (min-width: 769px) and (max-width: 992px) {
-    body {
-        overflow: hidden;
-    }
-
-    main .page_content_section {
-        padding-bottom: 23.5rem;
-    }
-
-    header .header-title {
-        font-size: 1.2rem;
-    }
-
-    header img {
-        width: 5rem;
-        height: 5rem;
-    }
-
-    footer {
-        padding-top: 0.5rem;
-        margin-top: -23.5rem;
-        height: 23.5rem;
-    }
+@media only screen and (min-width: 481px) and (max-width: 768px) {
 }
 
-@media only screen and (min-width: 993px) and (max-width: 1200px) {
-    main .page_content_section {
-        padding-bottom: 23.5rem;
-    }
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+}
 
-    header .header-title {
-        font-size: 1.2rem;
-    }
+@media only screen and (min-width: 1025px) and (max-width: 1600px) {
+}
 
-    header img {
-        width: 5rem;
-        height: 5rem;
-    }
-
-    footer {
-        padding-top: 0.5rem;
-        margin-top: -23.5rem;
-        height: 23.5rem;
-    }
-} */
-
-/* @media only screen and (min-width: 1201px) {
-    body {
-        height: 120%;
-    }
-    main .page_content_section {
-        padding-bottom: 17.5rem;
-    }
-
-    footer {
-        padding-top: 2rem;
-        margin-top: -17.5rem;
-        height: 17.5rem;
-    }
-
-    .home-section .home-title {
-        font-size: 7rem;
-    }
-
-    .home-section button {
-        font-size: 2rem;
-        width: 16rem;
-        height: 4rem;
-    }
-} */
+@media only screen and (min-width: 1601px) {
+}

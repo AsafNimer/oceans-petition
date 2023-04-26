@@ -1,15 +1,16 @@
 <section class="thanks-section">
-  
-    <h3 id="thank-you">Thank you {{first}} for joining. We appreciate your support!</h3>
-    <img src="{{signatureSrc}}" /><br />
-
-     <h4><a id="signers-link" href="/signers">Click here to see those who joined. There are already 
-            {{totalSigners}} supporters </a></h4>
+    <p class="thank-you">Thank you {{first}} for your support !</p>
+    <img src="{{signatureSrc}}" />
+    <p class="supporters-par"><a class="signers-link" href="/signers">Click here
+        </a>to see more supporters like you.</p>
+    <p class="supporters-par">
+        There are already
+        {{totalSigners}}
+        supporters !
+    </p>
     <form action="/thanks" method="post" name="delete">
-        <button id="delete-button">Delete</button>
+        <button class="delete-button">Delete</button>
     </form>
+    <a class="edit-link" href="/edit"><p class="edit-par">Edit your profile</p></a>
 
-    {{>logout}}
-    <a id="edit-link" href="/edit"><h5>Edit your profile</h5></a>
-   
 </section>

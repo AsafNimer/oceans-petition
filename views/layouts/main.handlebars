@@ -6,18 +6,54 @@
         <title>{{title}}</title>
         <link rel="stylesheet" href="/style.css" />
     </head>
-    <body class="body-section">
-        <header class="header-section">
-            <img
-                src="/image.jpeg"
-                width="400px"
-                height="200px"
-                alt="sea-shephard logo"
-            />
+    <body>
+        {{!-- {{#if header}} --}}
+        <header id="header">
+            {{#if loggedIn}}
+            <div id="logout" class="logout-div">
+                {{>logout}}
+            </div>
+            {{/if}}
+            <p id="vitaminsea" class="vitaminsea-title">VitaminSea</p>
         </header>
-        <main>
-            {{{body}}}
+        <div class="hr-header">
+            <hr >
+        </div>
+        <main class="main_container">
+            <section class="page_content_section">
+                {{{body}}}
+            </section>
         </main>
-        <footer></footer>
+        <footer>
+            <div class="footer_content_div">
+                <div class="footer-title-and-logo-div">
+                    
+                    <p class="footer-title">PROTECTING
+                    <br />
+                    OCEANS
+                    <br />
+                    WORLDWIDE</p>
+                    <img
+                        src= "/assets/whale.png"
+                        alt= "whale-logo"
+                    />  
+                </div>
+                 
+                <div class="footer-menu-div">
+                    <ul>
+                        <li>CONTACT</li>
+                        <li>PRIVACY POLICY</li>
+                        <li>TERMS OF USE</li>
+                    </ul>
+                </div>
+                <div class="social-media-icons-div">
+                    <img src="/assets/instagram.png" alt="instagram-logo" />
+                    <img src="/assets/facebook.png" alt="facebook logo" />
+                    <img src="/assets/twitter.png" alt="twitter logo" />
+                    <img src="/assets/youtube.png" alt="youtube logo" />
+                </div>
+                <h6>© 2023 VITAMINSEA CONSERVATION SOCIETY</h6>
+            </div>
+        </footer>
     </body>
 </html>

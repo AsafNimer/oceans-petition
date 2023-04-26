@@ -1,8 +1,7 @@
 <section class="login-section">
-    <h3 id="sign-in-title">Please sign in |
-        <a href="/logout">Back to register</a></h3>
+    <p class="sign-in-title">Please sign in</p>
     {{#if error}}
-        <h2>Not valid, try again</h2>
+        <p class="error-msg">Password or Email not valid, try again</p>
     {{/if}}
     <form action="" method="post" name="login-form" id="login-form">
         <input
@@ -27,7 +26,6 @@
             class="register"
         >Submit</button>
     </form>
-    {{!-- {{#if msg}}
-        {{errorMsg}}
-    {{if/}} --}}
+
+    <a href="/register">Back to register</a>
 </section>

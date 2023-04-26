@@ -1,9 +1,11 @@
 <section class="register-section">
 
     {{#if error}}
-        <h2>email registered, go to login.</h2>
+        <p class="error-msg">Email registered, please sign in.</p>
     {{/if}}
-
+    <p class="register-upper-title">Sign our petition and be part of a global
+        change.</p>
+    <p class="register-upper-title">Please register</p>
     <form
         action="/register"
         method="post"
@@ -17,7 +19,7 @@
             name="first"
             placeholder="First Name"
             required
-        /><br /><br />
+        />
         <input
             class="register-input"
             type="text"
@@ -25,7 +27,7 @@
             name="last"
             placeholder="Last Name"
             required
-        /><br /><br />
+        />
         <input
             class="register-input"
             type="email"
@@ -33,7 +35,7 @@
             name="email"
             placeholder="email"
             required
-        /><br /><br />
+        />
         <input
             class="register-input"
             type="password"
@@ -41,11 +43,9 @@
             name="password"
             placeholder="password"
             required
-        /><br /><br />
+        />
         <button id="register-button">Submit</button>
     </form>
-
-    <h4 id="register-title">Already a member ?
-        <a id="sign-in-link" href="/login">Sign in</a></h4>
-
+    <p class="go-to-sign-in">Already a member ?
+        <a href="/login">Sign in</a></p>
 </section>

@@ -1,9 +1,8 @@
 <section class="profile-section">
-   
-    {{#if error}} 
-        <h2>Something went wrong!</h2>
+    {{#if error}}
+        <p class="error-msg">Something went wrong!</p>
     {{/if}}
-    <p>Tell us a bit more about yourself.</p>
+    <p class="profile-title">Tell us a bit more about yourself.</p>
     <form
         action="/profile"
         method="post"
@@ -16,22 +15,22 @@
             id="input-age"
             name="age"
             placeholder="Age"
-        /><br><br>
+        />
         <input
             class="profile-input"
             type="text"
             id="city"
             name="city"
             placeholder="City"
-        /><br><br>
+        />
         <input
             class="profile-input"
             type="url"
             id="user-website-input"
             name="url"
             placeholder="Website"
-        /><br /><br />
+        />
         <button id="profile-button">Continue</button>
     </form>
-   <h4> <a href="/petition">Skip |</a> {{>logout}}</h4>
+    <p class="skip"><a href="/petition">Skip</a></p>
 </section>

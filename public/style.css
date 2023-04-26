@@ -1,404 +1,301 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html {
+    font-size: 15px;
+}
+
+body {
+    background: linear-gradient(rgb(203, 238, 234), white);
+    background-repeat: no-repeat;
+    font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS";
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.main_container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container .page_content_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    height: auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+hr {
+    opacity: 0.3;
+}
+
+.hr-header {
+    width: 100%;
+}
+
+header .vitaminsea-title {
+    padding: 1rem;
+    font-size: 4rem;
+    color: black;
+    grid-column: 1 / 2;
+    grid-row: 1;
+}
+
+header .logout-div {
+    padding: 2rem;
+    grid-column: 2 / 3;
+    grid-row: 1;
+    justify-self: flex-end;
+}
+
+.logout-div a {
+    text-decoration: none;
+    color: rgb(238, 66, 9);
+    font-weight: lighter;
+    font-size: 1.6rem;
+}
+
+header a {
+    text-decoration: none;
+    color: rgb(44, 40, 40);
+}
+
+header .header-title {
+    font-weight: lighter;
+    font-size: 1rem;
+    color: black;
+}
+
+footer {
+    background-color: rgb(203, 200, 200);
+    width: 100%;
+    height: 17rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .footer_content_div {
+    gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer_content_div .footer-title-and-logo-div {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-title-and-logo-div img {
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.footer_content_div .footer-title {
+    color: black;
+    font-size: 1rem;
+    font-weight: lighter;
+}
+
+.footer-menu-div ul {
+    display: flex;
+    gap: 3rem;
+}
+
+.footer-menu-div ul li {
+    list-style: none;
+    color: black;
+}
+
+.social-media-icons-div {
+    display: flex;
+    gap: 2rem;
+}
+
+.social-media-icons-div img {
+    height: 2.5rem;
+    width: 2.5rem;
+}
+
+footer h6 {
+    color: black;
+    font-weight: lighter;
+    font-size: 1rem;
+}
 /*-----------------------HOME TEMPLATE----------------------*/
 .home-section {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.home-section h1 {
-    position: relative;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
-    font-size: 100px;
-    height: 25px;
-    width: 100%;
-    top: 100px;
-    margin-left: 40px;
+.home-section .home-title {
     color: rgb(44, 40, 40);
+    font-size: 5rem;
 }
 
 .home-section form {
-    align-self: center;
-    justify-self: center;
+    margin-top: 2rem;
 }
 
 .home-section button {
-    position: relative;
-    color: white;
-    font-size: 25px;
-    background-color: black;
-    width: 250px;
-    height: 60px;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
-    left: 450px;
-    top: 400px;
-    border-radius: 5px;
-    font-weight: lighter;
-}
-/* ----------------------main template--------------------- */
-.body-section {
-    position: absolute;
-    width: 100%;
-    min-height: 100vh;
-    display: relative;
-    background: url("/img.jpeg") no-repeat;
-    background-size: 100vw 100vh;
-}
-
-.body-section header {
-    background-color: white;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 200px;
-    display: flex;
-    object-fit: contain;
-}
-
-.body-section main {
-    position: relative;
-    display: flex;
-}
-
-main h1 {
-    position: relative;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
-    font-size: 100px;
-    height: 25px;
-    width: 100%;
-    top: 100px;
-    margin-left: 40px;
-    color: rgb(44, 40, 40);
-}
-
-.header-section img {
-    position: relative;
-    align-self: center;
-}
-/* ----------------------petition template--------------------- */
-
-.petition-section {
-    position: absolute;
-}
-
-.petition-section h2 {
-    position: relative;
-    left: 200px;
-    left: 450px;
-    font-weight: lighter;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
-    font-size: 35px;
-}
-
-.petition-section form {
-    position: absolute;
-    align-self: center;
-    justify-self: center;
-    left: 370px;
-    margin: 25px;
-    height: 45px;
-}
-
-.petition-section button {
-    position: relative;
-    color: white;
-    font-size: 25px;
-    background-color: black;
-    width: 250px;
-    height: 60px;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
-    left: 300px;
-    top: 200px;
-    border-radius: 5px;
-    font-weight: lighter;
-}
-
-.petition-section canvas {
-    position: absolute;
-    background-color: white;
-    position: absolute;
-    top: -20px;
-    left: 100px;
-    border: none black;
-    border-radius: 10px;
-}
-
-.petition-section a {
-    position: absolute;
-    text-decoration: none;
-    color: rgb(238, 66, 9);
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
-    font-weight: lighter;
-    font-size: 25px;
-    top: 500px;
-    left: 775px;
-    width: 100%;
-}
-/* ----------------------thanks template--------------------- */
-.thanks-section {
-    position: absolute;
-}
-
-.thanks-section h5 {
-    position: absolute;
-    left: 350px;
-    width: 100%;
-    font-weight: lighter;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
-    font-size: 20px;
-    top: 450px;
-    left: 735px;
-    color: rgb(238, 66, 9);
-}
-
-.thanks-section #thank-you {
-    position: absolute;
-    left: 350px;
-    width: 100%;
-    font-weight: lighter;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
-    font-size: 40px;
-}
-
-.thanks-section img {
-    position: absolute;
-    background-color: white;
-    width: 500px;
-    height: 200px;
-    border-radius: 10px;
-    top: 150px;
-    left: 550px;
-}
-
-.thanks-section #delete-button {
-    position: relative;
-    color: white;
-    font-size: 20px;
-    background-color: black;
-    width: 150px;
-    height: 40px;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
-    left: 720px;
-    top: 300px;
-    border-radius: 5px;
-    font-weight: lighter;
-}
-
-.thanks-section h4 {
-    position: relative;
-    justify-self: center;
-    left: 480px;
-    width: 100vw;
-    font-weight: lighter;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
-    font-size: 35px;
-}
-
-.thanks-section #signers-link {
-    position: absolute;
-    text-decoration: none;
-    color: rgb(238, 66, 9);
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
-    font-weight: lighter;
-    font-size: 25px;
-    top: 35px;
-}
-
-.thanks-section #logout-partial {
-    position: absolute;
-    text-decoration: none;
-    color: rgb(238, 66, 9);
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
-    font-weight: lighter;
-    font-size: 25px;
-    top: 430px;
-    left: 755px;
-}
-
-.thanks-section #edit-link {
+    cursor: pointer;
     color: black;
-}
-/* ----------------------signers template--------------------- */
-.signers-section {
-    position: absolute;
-}
-
-.signers-section h4 {
-    position: relative;
-    margin-left: 20px;
-    font-size: 25px;
+    /* background-color: rgb(217, 98, 24); */
+    background-color: rgb(255, 225, 0);
+    font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS";
+    border: none;
     font-weight: lighter;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
-}
-
-.signers-section #logout-partial {
-    position: absolute;
-    text-decoration: none;
-    color: rgb(238, 66, 9);
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
-    font-weight: lighter;
-    font-size: 25px;
-    width: 100%;
-    top: 580px;
-    left: 750px;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    width: 12rem;
+    height: 3rem;
 }
 /* ----------------------register template--------------------- */
 .register-section {
-    position: absolute;
-    top: 200px;
-    left: 650px;
+    margin-top: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.register-section form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
 }
 
 .register-section a {
     text-decoration: none;
     color: rgb(238, 66, 9);
+    font-size: 2rem;
 }
 
-.register-section h2 {
+.register-section .error-msg {
+    font-size: 1.8rem;
     font-weight: lighter;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
     color: tomato;
 }
 
 .register-section input {
-    width: 300px;
-    height: 40px;
-    font-size: 15px;
+    padding: 1rem;
+    width: 30rem;
+    height: 3rem;
+    font-size: 1rem;
     font-weight: lighter;
-    border: none;
+    border-radius: 10px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: solid 1px black;
 }
 
 .register-section button {
-    position: relative;
-    color: white;
-    font-size: 25px;
-    background-color: black;
-    width: 200px;
-    height: 40px;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
-    font-weight: lighter;
-    left: 50px;
-    border-radius: 5px;
-    font-weight: lighter;
-}
-
-.register-section h4 {
-    font-size: 25px;
-    font-weight: lighter;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
-}
-/* ----------------------login template--------------------- */
-.login-section {
-    position: absolute;
-    top: 200px;
-    left: 650px;
-}
-
-.login-section h2 {
-    font-size: 25px;
-    font-weight: lighter;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
-}
-
-.login-section h3 {
-    font-size: 25px;
-    font-weight: lighter;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
-}
-
-.login-section a {
-    text-decoration: none;
-    color: rgb(238, 66, 9);
-}
-
-.login-section input {
-    width: 300px;
-    height: 40px;
-    font-size: 15px;
+    cursor: pointer;
+    font-size: 2rem;
+    width: 16rem;
+    height: 4rem;
+    background-color: rgb(217, 98, 24);
+    font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS";
     font-weight: lighter;
     border: none;
+    border-radius: 10px;
+    font-weight: lighter;
+    color: antiquewhite;
 }
 
-.login-section button {
-    position: relative;
-    color: white;
-    font-size: 25px;
-    background-color: black;
-    width: 200px;
-    height: 40px;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
+.register-section .register-upper-title {
+    font-size: 1.6rem;
     font-weight: lighter;
-    left: 50px;
-    border-radius: 5px;
+}
+
+.register-section .go-to-sign-in {
+    font-size: 1.8rem;
     font-weight: lighter;
 }
 /* ----------------------profile template--------------------- */
 .profile-section {
-    position: absolute;
-    top: 200px;
-    left: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.profile-section h2 {
-    font-size: 25px;
-    font-weight: lighter;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
+.profile-section form {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
 }
 
-.profile-section p {
-    font-size: 25px;
+.profile-section .error-msg {
+    color: tomato;
+    font-size: 2rem;
     font-weight: lighter;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
+}
+
+.profile-section .profile-title {
+    font-size: 1.8rem;
+    font-weight: lighter;
 }
 
 .profile-section input {
-    width: 300px;
-    height: 40px;
-    font-size: 15px;
+    padding: 0.8rem;
+    width: 30rem;
+    height: 3rem;
+    font-size: 1rem;
     font-weight: lighter;
-    border: none;
+    border-radius: 10px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: solid 1px black;
 }
 
 .profile-section button {
-    position: relative;
-    color: white;
-    font-size: 25px;
-    background-color: black;
-    width: 200px;
-    height: 40px;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    width: 16rem;
+    height: 4rem;
+    background-color: rgb(217, 98, 24);
+    font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS";
     font-weight: lighter;
-    left: 50px;
-    border-radius: 5px;
+    border: none;
+    border-radius: 10px;
     font-weight: lighter;
+    color: antiquewhite;
 }
 
-.profile-section h4 {
-    font-size: 25px;
+.profile-section .skip {
+    font-size: 1.8rem;
     font-weight: lighter;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
     text-decoration: none;
     color: rgb(238, 66, 9);
 }
@@ -407,68 +304,541 @@ main h1 {
     text-decoration: none;
     color: rgb(238, 66, 9);
 }
+/* ----------------------login template--------------------- */
+.login-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    gap: 3rem;
+}
+
+.login-section form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-section .error-msg {
+    color: tomato;
+    font-size: 2rem;
+    font-weight: lighter;
+}
+
+.login-section .sign-in-title {
+    font-size: 2rem;
+    font-weight: lighter;
+}
+
+.login-section a {
+    font-size: 2rem;
+    font-weight: lighter;
+    text-decoration: none;
+    color: rgb(238, 66, 9);
+}
+
+.login-section input {
+    padding: 0.8rem;
+    width: 30rem;
+    height: 3rem;
+    font-size: 1rem;
+    font-weight: lighter;
+    border-radius: 10px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: solid 1px black;
+}
+
+.login-section button {
+    cursor: pointer;
+    color: antiquewhite;
+    font-size: 1.5rem;
+    background-color: rgb(217, 98, 24);
+    width: 16rem;
+    height: 4rem;
+    font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS";
+    font-weight: lighter;
+    border-radius: 10px;
+    border: none;
+}
+/* ----------------------petition template--------------------- */
+.petition-section {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.petition-section .petition-title {
+    font-weight: lighter;
+    font-size: 2rem;
+    line-height: 3rem;
+}
+
+.petition-section form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.petition-section .submit-button {
+    cursor: pointer;
+    color: antiquewhite;
+    font-size: 1.5rem;
+    background-color: rgb(217, 98, 24);
+    width: 16rem;
+    height: 4rem;
+    font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS";
+    font-weight: lighter;
+    border-radius: 10px;
+    border: none;
+}
+
+.petition-section canvas {
+    background-color: antiquewhite;
+    border: none;
+    border-radius: 10px;
+}
+/* ----------------------thanks template--------------------- */
+.thanks-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.thanks-section .thank-you {
+    font-weight: lighter;
+    font-size: 2.5rem;
+}
+
+.thanks-section img {
+    background-color: antiquewhite;
+    width: 20rem;
+    height: 10rem;
+    border-radius: 10px;
+}
+
+.thanks-section .delete-button {
+    cursor: pointer;
+    font-size: 1.5rem;
+    background-color: rgb(217, 98, 24);
+    width: 16rem;
+    height: 4rem;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    font-weight: lighter;
+    font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS";
+}
+
+.thanks-section .supporters-par {
+    font-weight: lighter;
+    font-size: 2rem;
+    line-height: 3rem;
+}
+
+.thanks-section .signers-link {
+    text-decoration: none;
+    color: rgb(238, 66, 9);
+    font-weight: lighter;
+    font-size: 2rem;
+}
+
+.thanks-section .edit-par {
+    font-weight: lighter;
+    font-size: 1.8rem;
+    color: rgb(238, 66, 9);
+}
+
+.thanks-section .edit-link {
+    text-decoration: none;
+}
+/* ----------------------signers template--------------------- */
+.signers-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.signers-section .signers-title {
+    font-size: 2.5rem;
+    font-weight: lighter;
+    margin-bottom: 2rem;
+}
+
+.signers-section .signers-container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.5rem 0.5rem;
+    justify-content: center;
+}
+
+.signers-container .signer-div {
+    grid-row-start: 1/2;
+    grid-column-start: 1/2;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(217, 98, 24);
+    color: antiquewhite;
+    padding: 1rem;
+    height: 8rem;
+    width: 8rem;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.signers-section .signer {
+    font-size: 1.2rem;
+    font-weight: lighter;
+    line-height: 2rem;
+}
+
+.signers-section .same-city-container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.5rem 0.5rem;
+    justify-content: center;
+}
+
+.same-city-container .same-city-div {
+    grid-row-start: 1/2;
+    grid-column-start: 1/2;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(217, 98, 24);
+    color: antiquewhite;
+    padding: 1rem;
+    height: 8rem;
+    width: 8rem;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.signers-section a {
+    text-decoration: none;
+}
+
+.signers-section .same-city-title {
+    font-size: 2rem;
+    font-weight: lighter;
+    margin-bottom: 2rem;
+}
+
+.signers-section .unknown-city {
+    font-size: 2.5rem;
+    font-weight: lighter;
+}
+
+.signers-section .back-to-button {
+    cursor: pointer;
+    margin-top: 7rem;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    background-color: rgb(217, 98, 24);
+    width: 8rem;
+    height: 2rem;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-weight: lighter;
+    font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS";
+}
 /* ----------------------edit template--------------------- */
 .edit-section {
-    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
 }
 
-.edit-section h1 {
-    position: absolute;
-    top: -15px;
-    font-size: 40px;
+.edit-section .edit-title {
+    font-size: 2.8rem;
     font-weight: lighter;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
-}
-
-.edit-section input {
-    width: 300px;
-    height: 40px;
-    font-size: 15px;
-    font-weight: lighter;
-    border: none;
-    margin-bottom: 10px;
-}
-
-.edit-section button {
-    position: relative;
-    color: white;
-    font-size: 20px;
-    background-color: black;
-    width: 150px;
-    height: 30px;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
-    font-weight: lighter;
-    left: 50px;
-    border-radius: 5px;
-    font-weight: lighter;
-    left: 120px;
-}
-
-.edit-section label {
-    font-size: 25px;
-    font-weight: lighter;
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
-    margin-right: 15px;
 }
 
 .edit-section form {
-    position: relative;
-    top: 10px;
-    left: 650;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 }
 
-.edit-section #logout-partial {
-    position: absolute;
-    text-decoration: none;
-    color: rgb(238, 66, 9);
-    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-        sans-serif;
-    font-weight: lighter;
-    font-size: 25px;
-    width: 100%;
-    top: 575px;
-    left: 665px;
+.edit-section .input-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.4rem;
+    margin-bottom: 0.3rem;
 }
+
+.edit-section label {
+    font-size: 1.2rem;
+    font-weight: lighter;
+}
+
+.edit-section input {
+    padding: 1rem;
+    width: 30rem;
+    height: 3rem;
+    font-size: 1rem;
+    font-weight: lighter;
+    border-radius: 10px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: solid 1px black;
+}
+
+.edit-section button {
+    cursor: pointer;
+    font-size: 1.5rem;
+    background-color: rgb(217, 98, 24);
+    width: 12rem;
+    height: 3rem;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    font-weight: lighter;
+    font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS";
+    margin-bottom: 2rem;
+}
+
+@media only screen and (max-width: 600px) and (orientation: portrait) {
+    body {
+        overflow: hidden;
+    }
+
+    header .header-title {
+        font-size: 0.8rem;
+    }
+
+    header img {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    footer {
+        display: none;
+    }
+
+    .home-section {
+        margin-top: 4rem;
+    }
+
+    .home-section .home-title {
+        font-size: 3.5rem;
+    }
+
+    .home-section button {
+        font-size: 1rem;
+        width: 8rem;
+        height: 2rem;
+    }
+    /* ----------------------register template--------------------- */
+    .register-section {
+        margin-top: 8rem;
+        gap: 4rem;
+    }
+
+    .register-section form {
+        gap: 1rem;
+    }
+
+    .register-section input {
+        padding: 0.5rem;
+        width: 13rem;
+        height: 2.5rem;
+        font-size: 1rem;
+    }
+
+    .register-section button {
+        font-size: 1.5rem;
+        margin-top: 2rem;
+        width: 10rem;
+        height: 2.5rem;
+    }
+
+    .register-section .go-to-sign-in {
+        font-size: 1.5rem;
+    }
+
+    .register-section a {
+        font-size: 1.5rem;
+    }
+    /* ----------------------login template--------------------- */
+    .login-section {
+        margin-top: 3rem;
+        gap: 2rem;
+    }
+
+    .login-section .error-msg {
+        color: tomato;
+        font-size: 2rem;
+        font-weight: lighter;
+    }
+
+    .login-section .sign-in-title {
+        font-size: 2rem;
+    }
+
+    .login-section a {
+        font-size: 1.8rem;
+    }
+
+    .login-section input {
+        padding: 0.5rem;
+        width: 13rem;
+        height: 2.5rem;
+        font-size: 1rem;
+    }
+
+    .login-section button {
+        font-size: 1.5rem;
+        margin-top: 2rem;
+        width: 10rem;
+        height: 2.5rem;
+    }
+    /* ----------------------petition template--------------------- */
+    .petition-section {
+        margin-top: 3rem;
+        gap: 0.5rem;
+    }
+
+    .petition-section form {
+        gap: 1rem;
+    }
+
+    form canvas {
+        height: 8rem;
+        width: 17rem;
+    }
+
+    .petition-section h2 {
+        font-size: 1rem;
+        line-height: 2rem;
+    }
+
+    .petition-section .button-submit {
+        margin-top: 2rem;
+        font-size: 1rem;
+        width: 9rem;
+        height: 2.5rem;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+    body {
+        overflow: hidden;
+    }
+
+    main .page_content_section {
+        padding-bottom: 23rem;
+    }
+
+    header .header-title {
+        font-size: 0.8rem;
+    }
+
+    header img {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    footer {
+        padding-top: 1rem;
+        margin-top: -23rem;
+        height: 23rem;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+    body {
+        overflow: hidden;
+    }
+
+    main .page_content_section {
+        padding-bottom: 23.5rem;
+    }
+
+    header .header-title {
+        font-size: 1.2rem;
+    }
+
+    header img {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    footer {
+        padding-top: 0.5rem;
+        margin-top: -23.5rem;
+        height: 23.5rem;
+    }
+}
+
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+    main .page_content_section {
+        padding-bottom: 23.5rem;
+    }
+
+    header .header-title {
+        font-size: 1.2rem;
+    }
+
+    header img {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    footer {
+        padding-top: 0.5rem;
+        margin-top: -23.5rem;
+        height: 23.5rem;
+    }
+}
+
+/* @media only screen and (min-width: 1201px) {
+    body {
+        height: 120%;
+    }
+    main .page_content_section {
+        padding-bottom: 17.5rem;
+    }
+
+    footer {
+        padding-top: 2rem;
+        margin-top: -17.5rem;
+        height: 17.5rem;
+    }
+
+    .home-section .home-title {
+        font-size: 7rem;
+    }
+
+    .home-section button {
+        font-size: 2rem;
+        width: 16rem;
+        height: 4rem;
+    }
+} */

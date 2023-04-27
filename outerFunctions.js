@@ -27,7 +27,10 @@ module.exports.firstLetterToUpperCase = function (strOrArray) {
         for (let i = 0; i < strOrArray.length; i++) {
             for (let key in strOrArray[i]) {
                 if (key === "first" || key === "last" || key === "city") {
-                    if (strOrArray[i][key] === null) {
+                    if (
+                        strOrArray[i][key] === null ||
+                        strOrArray[i][key] === ""
+                    ) {
                         strOrArray[i][key] = "Unknown";
                     }
                     let subArr = strOrArray[i][key].trim().split(" ");
@@ -46,6 +49,10 @@ module.exports.firstLetterToUpperCase = function (strOrArray) {
                             }
                         }
                     } else {
+                        console.log(
+                            "strOrArray[i][key]******: ",
+                            Object.entries(strOrArray[i])
+                        );
                         if (
                             strOrArray[i][key][0] ==
                             strOrArray[i][key][0].toLowerCase()

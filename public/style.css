@@ -8,7 +8,7 @@ html {
 }
 
 body {
-    background: linear-gradient(rgb(203, 238, 234), white);
+    background: linear-gradient(rgb(2, 110, 97), white);
     background-repeat: no-repeat;
     font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS";
     display: flex;
@@ -646,12 +646,83 @@ footer h6 {
     }
 
     footer {
-        display: none;
+        background-color: rgb(203, 200, 200);
+        width: 100%;
+        height: 8rem;
     }
-    /*-----------------------HOME TEMPLATE 320 <= 480px----------------------*/
+
+    footer .footer_content_div {
+        height: 100%;
+        width: 100%;
+        gap: 1rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .footer_content_div .footer-title-and-logo-div {
+        padding: 1rem;
+        grid-column: 2/3;
+        grid-row: 1/2;
+        gap: 1rem;
+        justify-content: flex-end;
+        align-items: flex-end;
+        margin-bottom: 0rem;
+        margin-right: 1.3rem;
+    }
+
+    .footer-title-and-logo-div img {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .footer_content_div .footer-title {
+        font-size: 0.7rem;
+    }
+
+    .footer_content_div .footer-menu-div {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        padding-left: 1rem;
+        padding-top: 1rem;
+    }
+
+    .footer-menu-div ul {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .footer-menu-div ul li {
+        font-size: 0.6rem;
+    }
+
+    .social-media-icons-div {
+        grid-column: 2/3;
+        grid-row: 2/3;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        gap: 1rem;
+        padding-right: 1rem;
+        padding-bottom: 2rem;
+    }
+
+    .social-media-icons-div img {
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+
+    footer h6 {
+        grid-column: 1/2;
+        grid-row: 2/3;
+        padding-left: 1rem;
+        font-size: 0.6rem;
+        padding-bottom: 1.5rem;
+    }
+    /*-----------------------HOME TEMPLATE----------------------*/
     .home-section .home-title {
         color: rgb(44, 40, 40);
-        font-size: 4rem;
+        font-size: 3rem;
         width: auto;
         margin-bottom: -5rem;
         padding-bottom: 5rem;
@@ -659,10 +730,11 @@ footer h6 {
 
     .home-section button {
         font-size: 1rem;
-        width: 10rem;
-        height: 2.5rem;
+        width: 7rem;
+        height: 2rem;
         margin-bottom: 5rem;
     }
+
     /* ----------------------register template--------------------- */
     .register-section {
         background-color: rgba(255, 255, 255, 0);
@@ -687,7 +759,7 @@ footer h6 {
 
     .register-section input {
         padding: 0.8rem;
-        width: 17rem;
+        width: 13rem;
         height: 1.5rem;
         font-size: 0.7rem;
     }
@@ -718,7 +790,7 @@ footer h6 {
 
     .profile-section input {
         padding: 0.8rem;
-        width: 17rem;
+        width: 13rem;
         height: 1.5rem;
         font-size: 0.7rem;
     }
@@ -754,7 +826,7 @@ footer h6 {
 
     .login-section input {
         padding: 0.8rem;
-        width: 17rem;
+        width: 13rem;
         height: 1.5rem;
         font-size: 0.7rem;
     }
@@ -804,12 +876,12 @@ footer h6 {
     }
 
     .thanks-section .thank-you {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .thanks-section img {
-        width: 15rem;
-        height: auto;
+        width: 13rem;
+        height: 5rem;
     }
 
     .thanks-section .delete-button {
@@ -819,20 +891,20 @@ footer h6 {
     }
 
     .thanks-section .supporters-par {
-        font-size: 1rem;
+        font-size: 0.9rem;
         line-height: 1.2rem;
     }
 
     .thanks-section .signers-link {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .thanks-section .edit-par {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .thanks-section .edit-link {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
     /* ----------------------signers template--------------------- */
     .signers-section {
@@ -912,7 +984,7 @@ footer h6 {
 
     .edit-section input {
         padding: 0.8rem;
-        width: 17rem;
+        width: 13rem;
         height: 1.5rem;
         font-size: 0.7rem;
     }

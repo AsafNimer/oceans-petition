@@ -1,3 +1,14 @@
+:root {
+    --button-color: rgb(238, 204, 6);
+    --font-color: rgb(0, 0, 0);
+    --error-and-links-color: rgb(238, 66, 9);
+    --background-forms: rgba(255, 255, 255, 0.5);
+    --user-input-border-bottom: solid 1px rgba(0, 0, 128, 0.7);
+    --light-font: lighter;
+    --text-deco: none;
+    --font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS";
+}
+
 * {
     margin: 0px;
     padding: 0px;
@@ -10,7 +21,7 @@ html {
 body {
     background: linear-gradient(rgb(2, 110, 97), white);
     background-repeat: no-repeat;
-    font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS";
+    font-family: var(--font-family);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -66,15 +77,15 @@ header .logout-div {
 }
 
 .logout-div a {
-    text-decoration: none;
-    color: rgb(238, 66, 9);
-    font-weight: lighter;
+    text-decoration: var(--text-deco);
+    color: var(--error-and-links-color);
+    font-weight: var(--light-font);
     font-size: 1.6rem;
 }
 
 header a {
-    text-decoration: none;
-    color: rgb(44, 40, 40);
+    text-decoration: var(--text-deco);
+    color: var(--font-color);
 }
 
 footer {
@@ -85,6 +96,7 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 3rem;
 }
 
 footer .footer_content_div {
@@ -107,9 +119,9 @@ footer .footer_content_div {
 }
 
 .footer_content_div .footer-title {
-    color: black;
+    color: var(--font-color);
     font-size: 1rem;
-    font-weight: lighter;
+    font-weight: var(--light-font);
 }
 
 .footer-menu-div ul {
@@ -119,7 +131,7 @@ footer .footer_content_div {
 
 .footer-menu-div ul li {
     list-style: none;
-    color: black;
+    color: var(--font-color);
 }
 
 .social-media-icons-div {
@@ -133,8 +145,8 @@ footer .footer_content_div {
 }
 
 footer h6 {
-    color: black;
-    font-weight: lighter;
+    color: var(--font-color);
+    font-weight: var(--light-font);
     font-size: 1rem;
 }
 /*-----------------------HOME TEMPLATE----------------------*/
@@ -146,7 +158,7 @@ footer h6 {
 }
 
 .home-section .home-title {
-    color: rgb(44, 40, 40);
+    color: var(--font-color);
     font-size: 6.5rem;
 }
 
@@ -156,11 +168,11 @@ footer h6 {
 
 .home-section button {
     cursor: pointer;
-    color: black;
-    background-color: rgb(238, 204, 6);
-    font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS";
+    color: var(--font-color);
+    background-color: var(--button-color);
+    font-family: var(--font-family);
     border: none;
-    font-weight: lighter;
+    font-weight: var(--light-font);
     border-radius: 2px;
     font-size: 1.5rem;
     width: 12rem;
@@ -168,7 +180,7 @@ footer h6 {
 }
 /* ----------------------register template--------------------- */
 .register-section {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: var(--background-forms);
     padding: 2rem;
     width: 40rem;
     height: auto;
@@ -188,15 +200,15 @@ footer h6 {
 }
 
 .register-section a {
-    text-decoration: none;
-    color: rgb(238, 66, 9);
+    text-decoration: var(--text-deco);
+    color: var(--error-and-links-color);
     font-size: 2rem;
 }
 
 .register-section .error-msg {
     font-size: 1.8rem;
-    font-weight: lighter;
-    color: tomato;
+    font-weight: var(--light-font);
+    color: var(--error-and-links-color);
 }
 
 .register-section input {
@@ -204,20 +216,20 @@ footer h6 {
     width: 30rem;
     height: 3rem;
     font-size: 1rem;
-    font-weight: lighter;
+    font-weight: var(--light-font);
     border-top: none;
     border-right: none;
     border-left: none;
-    border-bottom: solid 1px rgba(0, 0, 128, 0.7);
+    border-bottom: var(--user-input-border-bottom);
 }
 
 .register-section button {
     cursor: pointer;
-    color: black;
-    background-color: rgb(238, 204, 6);
-    font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS";
+    color: var(--font-color);
+    background-color: var(--button-color);
+    font-family: var(--font-family);
     border: none;
-    font-weight: lighter;
+    font-weight: var(--light-font);
     border-radius: 2px;
     font-size: 1.5rem;
     width: 12rem;
@@ -226,16 +238,16 @@ footer h6 {
 
 .register-section .register-upper-title {
     font-size: 1.6rem;
-    font-weight: lighter;
+    font-weight: var(--light-font);
 }
 
 .register-section .go-to-sign-in {
     font-size: 1.8rem;
-    font-weight: lighter;
+    font-weight: var(--light-font);
 }
 /* ----------------------profile template--------------------- */
 .profile-section {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: var(--background-forms);
     padding: 2rem;
     width: 40rem;
     height: auto;
@@ -254,14 +266,14 @@ footer h6 {
 }
 
 .profile-section .error-msg {
-    color: tomato;
+    color: var(--error-and-links-color);
     font-size: 2rem;
-    font-weight: lighter;
+    font-weight: var(--light-font);
 }
 
 .profile-section .profile-title {
     font-size: 1.8rem;
-    font-weight: lighter;
+    font-weight: var(--light-font);
 }
 
 .profile-section input {
@@ -269,20 +281,20 @@ footer h6 {
     width: 30rem;
     height: 3rem;
     font-size: 1rem;
-    font-weight: lighter;
+    font-weight: var(--light-font);
     border-top: none;
     border-right: none;
     border-left: none;
-    border-bottom: solid 1px rgba(0, 0, 128, 0.7);
+    border-bottom: var(--user-input-border-bottom);
 }
 
 .profile-section button {
     cursor: pointer;
-    color: black;
-    background-color: rgb(238, 204, 6);
-    font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS";
+    color: var(--font-color);
+    background-color: var(--button-color);
+    font-family: var(--font-family);
     border: none;
-    font-weight: lighter;
+    font-weight: var(--light-font);
     border-radius: 2px;
     font-size: 1.5rem;
     width: 12rem;
@@ -293,18 +305,18 @@ footer h6 {
 .profile-section .skip {
     margin-top: 1rem;
     font-size: 1.8rem;
-    font-weight: lighter;
-    text-decoration: none;
-    color: rgb(238, 66, 9);
+    font-weight: var(--light-font);
+    text-decoration: var(--text-deco);
+    color: var(--error-and-links-color);
 }
 
 .profile-section a {
-    text-decoration: none;
+    text-decoration: var(--text-deco);
     color: rgb(238, 66, 9);
 }
 /* ----------------------login template--------------------- */
 .login-section {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: var(--background-forms);
     padding: 2rem;
     width: 40rem;
     height: auto;
@@ -322,21 +334,21 @@ footer h6 {
 }
 
 .login-section .error-msg {
-    color: tomato;
+    color: var(--error-and-links-color);
     font-size: 2rem;
-    font-weight: lighter;
+    font-weight: var(--light-font);
 }
 
 .login-section .sign-in-title {
     font-size: 2rem;
-    font-weight: lighter;
+    font-weight: var(--light-font);
 }
 
 .login-section a {
     font-size: 2rem;
-    font-weight: lighter;
-    text-decoration: none;
-    color: rgb(238, 66, 9);
+    font-weight: var(--light-font);
+    text-decoration: var(--text-deco);
+    color: var(--error-and-links-color);
 }
 
 .login-section input {
@@ -344,20 +356,20 @@ footer h6 {
     width: 30rem;
     height: 3rem;
     font-size: 1rem;
-    font-weight: lighter;
+    font-weight: var(--light-font);
     border-top: none;
     border-right: none;
     border-left: none;
-    border-bottom: solid 1px rgba(0, 0, 128, 0.7);
+    border-bottom: var(--user-input-border-bottom);
 }
 
 .login-section button {
     cursor: pointer;
-    color: black;
-    background-color: rgb(238, 204, 6);
-    font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS";
+    color: var(--font-color);
+    background-color: var(--button-color);
+    font-family: var(--font-family);
     border: none;
-    font-weight: lighter;
+    font-weight: var(--light-font);
     border-radius: 2px;
     font-size: 1.5rem;
     width: 12rem;
@@ -365,7 +377,7 @@ footer h6 {
 }
 /* ----------------------petition template--------------------- */
 .petition-section {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: var(--background-forms);
     padding: 2rem;
     width: 40rem;
     height: auto;
@@ -376,7 +388,7 @@ footer h6 {
 }
 
 .petition-section .petition-title {
-    font-weight: lighter;
+    font-weight: var(--light-font);
     font-size: 1.8rem;
     line-height: 3rem;
 }
@@ -391,11 +403,11 @@ footer h6 {
 
 .petition-section .submit-button {
     cursor: pointer;
-    color: black;
-    background-color: rgb(238, 204, 6);
-    font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS";
+    color: var(--font-color);
+    background-color: var(--button-color);
+    font-family: var(--font-family);
     border: none;
-    font-weight: lighter;
+    font-weight: var(--light-font);
     border-radius: 2px;
     font-size: 1.5rem;
     width: 12rem;
@@ -410,7 +422,7 @@ footer h6 {
 }
 /* ----------------------thanks template--------------------- */
 .thanks-section {
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: var(--background-forms);
     padding: 2rem;
     width: 40rem;
     height: auto;
@@ -421,7 +433,7 @@ footer h6 {
 }
 
 .thanks-section .thank-you {
-    font-weight: lighter;
+    font-weight: var(--light-font);
     font-size: 2.5rem;
 }
 
@@ -434,11 +446,11 @@ footer h6 {
 
 .thanks-section .delete-button {
     cursor: pointer;
-    color: black;
-    background-color: rgb(238, 204, 6);
-    font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS";
+    color: var(--font-color);
+    background-color: var(--button-color);
+    font-family: var(--font-family);
     border: none;
-    font-weight: lighter;
+    font-weight: var(--light-font);
     border-radius: 2px;
     font-size: 1.5rem;
     width: 12rem;
@@ -446,31 +458,31 @@ footer h6 {
 }
 
 .thanks-section .supporters-par {
-    font-weight: lighter;
+    font-weight: var(--light-font);
     font-size: 1.5rem;
     line-height: 3rem;
 }
 
 .thanks-section .signers-link {
-    text-decoration: none;
-    color: rgb(238, 66, 9);
-    font-weight: lighter;
+    text-decoration: var(--text-deco);
+    color: var(--error-and-links-color);
+    font-weight: var(--light-font);
     font-size: 1.5rem;
 }
 
 .thanks-section .edit-par {
-    font-weight: lighter;
+    font-weight: var(--light-font);
     font-size: 1.5rem;
-    color: rgb(238, 66, 9);
+    color: var(--error-and-links-color);
 }
 
 .thanks-section .edit-link {
-    text-decoration: none;
+    text-decoration: var(--text-deco);
 }
 /* ----------------------signers template--------------------- */
 .signers-section {
     margin-top: 3rem;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: var(--background-forms);
     padding: 2rem;
     width: 100%;
     height: auto;
@@ -482,7 +494,7 @@ footer h6 {
 
 .signers-section .signers-title {
     font-size: 2.2rem;
-    font-weight: lighter;
+    font-weight: var(--light-font);
     margin-bottom: 2rem;
 }
 
@@ -501,7 +513,7 @@ footer h6 {
     border: none;
     border-radius: 5px;
     background-color: rgba(238, 204, 6, 0.8);
-    color: black;
+    color: var(--font-color);
     padding: 1rem;
     height: 6rem;
     width: 6rem;
@@ -513,7 +525,7 @@ footer h6 {
 
 .signers-section .signer {
     font-size: 1rem;
-    font-weight: lighter;
+    font-weight: var(--light-font);
     line-height: 1.8rem;
 }
 
@@ -532,7 +544,7 @@ footer h6 {
     border: none;
     border-radius: 10px;
     background-color: rgba(238, 204, 6, 0.8);
-    color: black;
+    color: var(--font-color);
     padding: 1rem;
     height: 6rem;
     width: 6rem;
@@ -543,12 +555,12 @@ footer h6 {
 }
 
 .signers-section a {
-    text-decoration: none;
+    text-decoration: var(--text-deco);
 }
 
 .signers-section .same-city-title {
     font-size: 2rem;
-    font-weight: lighter;
+    font-weight: var(--light-font);
     margin-bottom: 2rem;
 }
 /* ----------------------edit template--------------------- */
@@ -567,7 +579,7 @@ footer h6 {
 .edit-section .edit-title {
     margin-top: 2rem;
     font-size: 2.5rem;
-    font-weight: lighter;
+    font-weight: var(--light-font);
 }
 
 .edit-section form {
@@ -589,7 +601,7 @@ footer h6 {
 
 .edit-section label {
     font-size: 1.2rem;
-    font-weight: lighter;
+    font-weight: var(--light-font);
 }
 
 .edit-section input {
@@ -597,20 +609,20 @@ footer h6 {
     width: 30rem;
     height: 3rem;
     font-size: 1rem;
-    font-weight: lighter;
+    font-weight: var(--light-font);
     border-top: none;
     border-right: none;
     border-left: none;
-    border-bottom: solid 1px rgba(0, 0, 128, 0.7);
+    border-bottom: var(--user-input-border-bottom);
 }
 
 .edit-section button {
     cursor: pointer;
-    color: black;
-    background-color: rgb(238, 204, 6);
-    font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS";
+    color: var(--font-color);
+    background-color: var(--button-color);
+    font-family: var(--font-family);
     border: none;
-    font-weight: lighter;
+    font-weight: var(--light-font);
     border-radius: 2px;
     font-size: 1.5rem;
     width: 12rem;
@@ -639,14 +651,13 @@ footer h6 {
     }
 
     .logout-div a {
-        text-decoration: none;
-        color: rgb(238, 66, 9);
-        font-weight: lighter;
+        text-decoration: var(--text-deco);
+        color: var(--error-and-links-color);
+        font-weight: var(--light-font);
         font-size: 1rem;
     }
 
     footer {
-        background-color: rgb(203, 200, 200);
         width: 100%;
         height: 8rem;
     }
@@ -721,7 +732,7 @@ footer h6 {
     }
     /*-----------------------HOME TEMPLATE----------------------*/
     .home-section .home-title {
-        color: rgb(44, 40, 40);
+        color: var(--font-color);
         font-size: 3rem;
         width: auto;
         margin-bottom: -5rem;
@@ -1029,12 +1040,11 @@ footer h6 {
     }
 
     header a {
-        text-decoration: none;
-        color: rgb(44, 40, 40);
+        text-decoration: var(--text-deco);
+        color: var(--font-color);
     }
 
     footer {
-        background-color: rgb(203, 200, 200);
         width: 100%;
         height: 8rem;
     }
@@ -1109,7 +1119,7 @@ footer h6 {
     }
     /*-----------------------HOME TEMPLATE----------------------*/
     .home-section .home-title {
-        color: rgb(44, 40, 40);
+        color: var(--font-color);
         font-size: 3.5rem;
     }
 
@@ -1416,7 +1426,6 @@ footer h6 {
     }
 
     footer {
-        background-color: rgb(203, 200, 200);
         width: 100%;
         height: 9rem;
     }
@@ -1668,7 +1677,7 @@ footer h6 {
     /* ----------------------signers template--------------------- */
     .signers-section {
         margin-top: 1.5rem;
-        background-color: rgba(255, 255, 255, 0.5);
+        background-color: var(--background-forms);
         padding: 1.5rem;
         width: auto;
     }
@@ -1702,7 +1711,7 @@ footer h6 {
     }
 
     .signers-section a {
-        text-decoration: none;
+        text-decoration: var(--text-deco);
     }
 
     .signers-section .same-city-title {
@@ -1711,7 +1720,7 @@ footer h6 {
     }
     /* ----------------------edit template--------------------- */
     .edit-section {
-        background-color: rgba(255, 255, 255, 0.5);
+        background-color: var(--background-forms);
         height: auto;
         overflow: scroll;
         margin-top: 1.5rem;
@@ -1781,7 +1790,6 @@ footer h6 {
     }
 
     footer {
-        background-color: rgb(203, 200, 200);
         width: 100%;
         height: 9rem;
     }
@@ -1873,7 +1881,7 @@ footer h6 {
     /* ----------------------register template--------------------- */
     .register-section {
         margin-top: 1rem;
-        background-color: rgba(255, 255, 255, 0.5);
+        background-color: var(--background-forms);
         padding: 1rem;
         width: auto;
         gap: 0.8rem;
@@ -1920,7 +1928,7 @@ footer h6 {
     }
     /* ----------------------profile template--------------------- */
     .profile-section {
-        background-color: rgba(255, 255, 255, 0.5);
+        background-color: var(--background-forms);
         padding: 1rem;
         width: auto;
     }
@@ -2014,7 +2022,7 @@ footer h6 {
     }
     /* ----------------------thanks template--------------------- */
     .thanks-section {
-        background-color: rgba(255, 255, 255, 0.5);
+        background-color: var(--background-forms);
         padding: 1rem;
         width: auto;
         gap: 1rem;
@@ -2049,7 +2057,7 @@ footer h6 {
     }
     /* ----------------------signers template--------------------- */
     .signers-section {
-        background-color: rgba(255, 255, 255, 0.5);
+        background-color: var(--background-forms);
         padding: 1rem;
         width: auto;
     }
@@ -2098,7 +2106,7 @@ footer h6 {
         bottom: 2.5rem;
         height: auto;
         padding: 1rem;
-        background-color: rgba(255, 255, 255, 0.5);
+        background-color: var(--background-forms);
         width: auto;
         height: 100vh;
         gap: 1.5rem;
@@ -2159,7 +2167,6 @@ footer h6 {
     }
 
     footer {
-        background-color: rgb(203, 200, 200);
         width: 100%;
         height: 14rem;
     }
@@ -2388,7 +2395,7 @@ footer h6 {
     }
     /* ----------------------signers template--------------------- */
     .signers-section {
-        background-color: rgba(255, 255, 255, 0.5);
+        background-color: var(--background-forms);
         padding: 2rem;
         width: auto;
     }
@@ -2436,7 +2443,7 @@ footer h6 {
         position: relative;
         bottom: 2.5rem;
         padding: 1rem;
-        background-color: rgba(255, 255, 255, 0.5);
+        background-color: var(--background-forms);
         width: auto;
         height: 100vh;
         padding: 2rem;

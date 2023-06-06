@@ -98,7 +98,7 @@ app.get("/login", (req, res) => {
 });
 
 app.get("/profile", (req, res) => {
-    res.render("profile", { loggedIn: true, header: true });
+    res.render("profile", { notLoggedIn: true, header: true });
 });
 
 app.get("/signers", (req, res) => {

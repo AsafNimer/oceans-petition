@@ -2,21 +2,14 @@ const express = require("express");
 const app = express();
 const db = require("./db");
 const outerFunctions = require("./outerFunctions");
-const PORT = 8080;
-console.log(PORT);
-
 const bcrypt = require("./bcrypt");
-
 const { engine } = require("express-handlebars");
+const cookieSession = require("cookie-session");
+
 app.engine("handlebars", engine());
 app.set("view engine", "handlebars");
-
 app.use(express.static("./public"));
-
 app.use(express.urlencoded({ extended: false }));
-
-const cookieSession = require("cookie-session");
-console.log(cookieSession);
 
 const COOKIE_SECRET =
     process.env.COOKIE_SECRET || require("./secrets.json").COOKIE_SECRET;
@@ -27,6 +20,15 @@ app.use(
         maxAge: 1000 * 60 * 60 * 24 * 14,
     })
 );
+
+if (process.env.NODE_ENV == "production") {
+    app.use((req, res, next) => {
+        if (req.headers["x-forwarded-proto"].startsWith("https")) {
+            return next();
+        }
+        res.redirect(`https://${req.hostname}${req.url}`);
+    });
+}
 
 app.use((req, res, next) => {
     next();

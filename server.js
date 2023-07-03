@@ -14,6 +14,14 @@ app.use(express.urlencoded({ extended: false }));
 const COOKIE_SECRET =
     process.env.COOKIE_SECRET || require("./secrets.json").COOKIE_SECRET;
 
+let sessionSecret;
+
+if (process.env.NODE_ENV == "production") {
+    sessionSecret = process.env.SESSION_SECRET;
+} else {
+    sessionSecret = require("./secrets").SESSION_SECRET;
+}
+
 app.use(
     cookieSession({
         secret: COOKIE_SECRET,
